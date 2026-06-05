@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+                   xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>MisiCopy</title>
+        <link>https://raw.githubusercontent.com/misilab/misicopy/main/appcast.xml</link>
+        <description>Mises à jour officielles de MisiCopy</description>
+        <language>fr</language>
+
+        <item>
+            <title>Version 1.0.2</title>
+            <pubDate>Fri, 05 Jun 2026 22:51:21 +0000</pubDate>
+            <sparkle:version>1.0.2</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Mises à jour automatiques (Sparkle)</li>
+                    <li>Auto-éjection corrigée pour les lecteurs SD intégrés au Mac</li>
+                    <li>Rapport PDF : toutes les vignettes affichées (paginées si besoin)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.0.2/MisiCopy-1.0.2.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="LDauGrusAq3mpAsHvSxhDRaXRKQ249dcdbxpjArJNfsp96ngveXEw0jQMDxWuSBYUQBnYX3weoH8uTjav5l/Cg==" length="3263611"/>
+        </item>
+
+    </channel>
+</rss>
