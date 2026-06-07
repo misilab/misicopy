@@ -8,6 +8,28 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.2.0</title>
+            <pubDate>Sun, 07 Jun 2026 22:33:27 +0000</pubDate>
+            <sparkle:version>1.2.0</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Structure DIT</b> — arborescence pro automatique : 00_INFOS / 01_RUSHES/&lt;date&gt;/&lt;cam&gt;/&lt;carte&gt; / 02_MHL / 03_PROXY / 04_LUT, avec rapport PDF et MHL rangés au bon dossier</li>
+                    <li>Détection auto de la caméra (A_CAM, B_CAM…) à partir du nom du 1er clip — A001_, B001_, etc.</li>
+                    <li>Personnalisation complète dans Réglages → Structure DIT : renommer chaque dossier, ajouter des dossiers customs (05_EDIT, MASTER_AUDIO…), changer le préfixe du rapport. Tout est persisté entre les sessions.</li>
+                    <li>Plus de freeze à la fin des copies (PDF + MHL générés en arrière-plan)</li>
+                    <li>Plus de freeze sur le branchement d'une carte avec surveillance + auto-start (détection caméra déchargée)</li>
+                    <li>Plus de freeze lors de l'éjection des cartes Codex / ARRI / Sony</li>
+                    <li>Sécurité : noms de dossier sanitizés (impossible de sortir du dossier projet)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.0/MisiCopy-1.2.0.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="cYgTgKj16BS5bcYSzpTM/IkBnLS9Au7SxlNCgp5Xk6+3rkBMxrAUANWoqH6gPMqHeKrdbzqS18EjMj/yv1ydAg==" length="3416400"/>
+        </item>
+
+        <item>
             <title>Version 1.1.0</title>
             <pubDate>Sun, 07 Jun 2026 16:53:43 +0000</pubDate>
             <sparkle:version>1.1.0</sparkle:version>
@@ -15,10 +37,9 @@
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <description><![CDATA[
                 <ul>
-                    <li>Pourcentage de progression affiché directement sur le bouton « Lancer la copie »</li>
-                    <li>Regroupement par plan dans le rapport PDF — une seule vignette et une seule ligne « vérifié » par séquence d'images (DPX, EXR, ARRIRAW, CinemaDNG…) au lieu d'une par frame</li>
-                    <li>Détection des cartes ARRI Codex / Codex Capture Drive (surveillance automatique + éjection) — y compris quand le driver ne signale pas le volume comme amovible</li>
-                    <li>Détection élargie à d'autres médias pro (Sony XDCAM, RED Mag, Panasonic AVCHD) via leur structure de dossiers</li>
+                    <li>Pourcentage de progression sur le bouton « Lancer la copie »</li>
+                    <li>Regroupement par plan dans le rapport PDF (DPX, EXR, ARRIRAW, CinemaDNG)</li>
+                    <li>Détection des cartes ARRI Codex / Sony XDCAM / RED Mag / Panasonic AVCHD</li>
                 </ul>
             ]]></description>
             <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.1.0/MisiCopy-1.1.0.dmg"
