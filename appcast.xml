@@ -8,6 +8,25 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.1.0</title>
+            <pubDate>Sun, 07 Jun 2026 16:53:43 +0000</pubDate>
+            <sparkle:version>1.1.0</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Pourcentage de progression affiché directement sur le bouton « Lancer la copie »</li>
+                    <li>Regroupement par plan dans le rapport PDF — une seule vignette et une seule ligne « vérifié » par séquence d'images (DPX, EXR, ARRIRAW, CinemaDNG…) au lieu d'une par frame</li>
+                    <li>Détection des cartes ARRI Codex / Codex Capture Drive (surveillance automatique + éjection) — y compris quand le driver ne signale pas le volume comme amovible</li>
+                    <li>Détection élargie à d'autres médias pro (Sony XDCAM, RED Mag, Panasonic AVCHD) via leur structure de dossiers</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.1.0/MisiCopy-1.1.0.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="zhm5ouWCaLYty5efgk+b6vmEF2qW8n4Chx1RyeTc23+mGh7M21BIN7U0R/I2JcppRlnzdkupIFKEx7uGiKClAw==" length="3293617"/>
+        </item>
+
+        <item>
             <title>Version 1.0.2</title>
             <pubDate>Fri, 05 Jun 2026 22:51:21 +0000</pubDate>
             <sparkle:version>1.0.2</sparkle:version>
