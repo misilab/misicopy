@@ -8,6 +8,23 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.3.1</title>
+            <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+            <sparkle:version>8</sparkle:version>
+            <sparkle:shortVersionString>1.3.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Vérification automatique des mises à jour forcée à chaque démarrage — les utilisateurs qui avaient un auto-check désactivé en UserDefaults seront enfin notifiés des nouvelles versions</li>
+                    <li>Premier check immédiat au lancement (3 s après), puis toutes les heures — fini d'attendre que la prochaine MAJ soit visible</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.1/MisiCopy-1.3.1.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="dXxCiwI7gjuJIKzVQgzwPP9wH9XhBueHOgrJvpnNynuaKctSfZVGl/iwhJPZjvUGL1MKxWTbcKBKqVOBpaddCQ==" length="3475420"/>
+        </item>
+
+        <item>
             <title>Version 1.3.0</title>
             <pubDate>Mon, 08 Jun 2026 22:35:00 +0000</pubDate>
             <sparkle:version>7</sparkle:version>
