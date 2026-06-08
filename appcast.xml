@@ -8,6 +8,25 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.3.2</title>
+            <pubDate>Tue, 09 Jun 2026 00:48:00 +0000</pubDate>
+            <sparkle:version>9</sparkle:version>
+            <sparkle:shortVersionString>1.3.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Copie multi-destinations en parallèle</b> — une seule lecture source fan-out vers toutes les destinations simultanément (les hardwares modernes avec disques indépendants verront jusqu'à ×2 le débit)</li>
+                    <li><b>Vraie barre de progression dans l'icône du Dock</b> en plus du badge texte</li>
+                    <li>Pourcentage correct en multi-destinations (`totalBytes × N` au lieu de plafonner à 100% trop tôt)</li>
+                    <li>Annulation respectée pendant la copie parallèle</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.2/MisiCopy-1.3.2.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="w6rDR5TbQ3a6yV+oRaXgGxEif+tBXrkY5RUiPVhyFXBc/HPqVsaPyp7TFpuAi1L3oZ/7bEitgjPeYWwtBY32Bg==" length="3475402"/>
+        </item>
+
+        <item>
             <title>Version 1.3.1</title>
             <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
             <sparkle:version>8</sparkle:version>
