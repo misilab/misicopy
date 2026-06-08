@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.2.1</title>
+            <pubDate>Mon, 08 Jun 2026 18:49:46 +0000</pubDate>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Espace libre / capacité totale affichés en live sur chaque destination (rafraîchi toutes les 5 s, orange si &lt; 10 Go)</li>
+                    <li>Bouton éjecter sur chaque destination, actif quand aucune copie n'est en cours</li>
+                    <li>Rapports PDF + MHL horodatés (HHMMSS) — fini l'écrasement quand on fait plusieurs copies sur la même journée en mode DIT</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.1/MisiCopy-1.2.1.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="u143SZiPWebTVKoOtOgCEO+tXvxtYTbyDvdzyZ8BH3zlVaWWD/QEVWHxH8KOM/hw/iFUKgKtzIOoFnwB/v0+BQ==" length="3443766"/>
+        </item>
+
+        <item>
             <title>Version 1.2.0</title>
             <pubDate>Sun, 07 Jun 2026 22:43:18 +0000</pubDate>
             <sparkle:version>3</sparkle:version>
