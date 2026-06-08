@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.2.2</title>
+            <pubDate>Mon, 08 Jun 2026 19:11:00 +0000</pubDate>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Détection caméra (A_CAM / B_CAM…) élargie : matche aussi le style ARRI/Sony <code>A001C001_…</code> en plus de RED <code>A001_C001_…</code></li>
+                    <li>Recherche en profondeur dans l'arborescence — les fichiers planqués dans <code>DCIM/100ARRI/</code> sont maintenant détectés</li>
+                    <li>Détection synchrone : plus de race condition avec le mode surveillance + auto-start</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.2/MisiCopy-1.2.2.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="uGjtkuNI5oy2w6BkFlctH9jKwk3tLrfGMLmlGmFdyKqc3905Uo/OdFXmkZzj+5eikUdhmb4N2pV27pLCX4wtDw==" length="3463197"/>
+        </item>
+
+        <item>
             <title>Version 1.2.1</title>
             <pubDate>Mon, 08 Jun 2026 18:49:46 +0000</pubDate>
             <sparkle:version>4</sparkle:version>
