@@ -8,6 +8,22 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.2.3</title>
+            <pubDate>Mon, 08 Jun 2026 19:50:00 +0000</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Mises à jour automatiques renforcées : vérification toutes les heures (au lieu de 24 h), plus de prompt d'autorisation au 1er lancement</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.3/MisiCopy-1.2.3.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="SeYAFqIe2fW86FuaIHz5+xHh1X6a1/yeE8GSTwj8zFwCc25FAVTKJdOMXf72JluvWWJEXtWSk8cVqdEAZqoTBQ==" length="3438557"/>
+        </item>
+
+        <item>
             <title>Version 1.2.2</title>
             <pubDate>Mon, 08 Jun 2026 19:11:00 +0000</pubDate>
             <sparkle:version>5</sparkle:version>
