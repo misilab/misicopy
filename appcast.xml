@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.3.3</title>
+            <pubDate>Tue, 09 Jun 2026 07:10:00 +0000</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.3.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Nouvel installer .pkg</b> avec assistant d'installation standard macOS, écran d'acceptation des CGU MisiLab, et confirmation par mot de passe administrateur (plus de drag-and-drop)</li>
+                    <li>Site web mis à jour partout : <b>www.misicopy.com</b> (au lieu de misiraca.com) — visible dans les rapports PDF, HTML, le footer de l'app et le manuel</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.3/MisiCopy-1.3.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="wqEMTcY5GqJqhrXvsE30+6lQC0bw3DyuXdVCGik/GUMCFnyvjY3VvUHc8bK/+TI50Ib40sGPuLRnQLPChm+XCw==" length="3245542"/>
+        </item>
+
+        <item>
             <title>Version 1.3.2</title>
             <pubDate>Tue, 09 Jun 2026 00:48:00 +0000</pubDate>
             <sparkle:version>9</sparkle:version>
