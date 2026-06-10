@@ -8,6 +8,26 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.4.0</title>
+            <pubDate>Wed, 10 Jun 2026 09:45:01 +0000</pubDate>
+            <sparkle:version>12</sparkle:version>
+            <sparkle:shortVersionString>1.4.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>MisiCopy devient gratuit</b> — plus de période d'essai, plus de limite de copies. Toutes les fonctions sont débloquées pour tout le monde.</li>
+                    <li><b>Bouton « Faire un don »</b> en haut à droite et dans le menu MisiCopy → soutenez le développement via <a href="https://payhip.com/b/ITG5N">payhip.com/b/ITG5N</a></li>
+                    <li>Rappel discret à la fermeture de l'application proposant de faire un don. Les donateurs reçoivent une clé d'enregistrement qui désactive ce rappel.</li>
+                    <li><b>Détection auto des sources audio</b> : un dossier dominé par des fichiers WAV / BWF / AIFF / FLAC est automatiquement étiqueté <code>SON</code> et rangé dans le dossier SON de l'arborescence DIT (avant la copie). Un seul fichier audio glissé est également détecté.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.0/MisiCopy-1.4.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="pC5XgyslSIelVlJpOJXb33TnHam5VS/Z0vlNxypB3/y5j8bDuEex7O9NmwN2HXLtr83DAIB9BNcXcS7S48C1BQ==" length="3261530"/>
+        </item>
+
+        <item>
             <title>Version 1.3.4</title>
             <pubDate>Tue, 09 Jun 2026 08:28:36 +0000</pubDate>
             <sparkle:version>11</sparkle:version>
