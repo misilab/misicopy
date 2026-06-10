@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.4.4</title>
+            <pubDate>Wed, 10 Jun 2026 11:38:44 +0000</pubDate>
+            <sparkle:version>16</sparkle:version>
+            <sparkle:shortVersionString>1.4.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Bouton « BUG ? » discret en bas à droite</b> de la fenêtre — un clic ouvre votre client mail pré-rempli pour signaler un problème (vers <code>misicopy@misiraca.com</code>)</li>
+                    <li>Nouvelle adresse de contact : <code>misicopy@misiraca.com</code> (au lieu de <code>contact@misiraca.com</code>) — appliquée partout (manuel, EULA, README, scripts)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.4/MisiCopy-1.4.4.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="h6380jnBrI70e5m+o5pWTtBuFBj8RBqPeYPq5aynEknsX3FGpft2MruZsn7BT4pTcltGGKiKMVyFSXv+CzfMDQ==" length="3273761"/>
+        </item>
+
+        <item>
             <title>Version 1.4.3</title>
             <pubDate>Wed, 10 Jun 2026 11:13:06 +0000</pubDate>
             <sparkle:version>15</sparkle:version>
