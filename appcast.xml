@@ -8,6 +8,23 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.4.1</title>
+            <pubDate>Wed, 10 Jun 2026 10:01:51 +0000</pubDate>
+            <sparkle:version>13</sparkle:version>
+            <sparkle:shortVersionString>1.4.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Sélecteur de langue en un clic</b> dans le coin haut-droit de la fenêtre : un clic sur <code>FR / EN / ES</code> ouvre la liste des trois langues avec la langue courante cochée</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.1/MisiCopy-1.4.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="a+SKvd7Y8UbvdgwY7K98CO0Kq5j/B1dwu3s1wxtGNcM9LpgbPMMwYD1fCW8VIx/1KpCP7whnZtIon1TKrnpOCg==" length="3265038"/>
+        </item>
+
+        <item>
             <title>Version 1.4.0</title>
             <pubDate>Wed, 10 Jun 2026 09:45:01 +0000</pubDate>
             <sparkle:version>12</sparkle:version>
