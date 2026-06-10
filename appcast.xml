@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.4.3</title>
+            <pubDate>Wed, 10 Jun 2026 11:13:06 +0000</pubDate>
+            <sparkle:version>15</sparkle:version>
+            <sparkle:shortVersionString>1.4.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Correctif majeur d'affichage en mode sombre macOS</b> — l'application restait illisible (texte blanc sur fond blanc) chez les utilisateurs ayant macOS en thème sombre. L'app est maintenant verrouillée en mode clair, garantissant une lisibilité totale.</li>
+                    <li>Le bouton « Acheter — 49,90 € » dans le panneau Licence devient « Faire un don » (cohérent avec la nouvelle philosophie gratuite de l'app)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.3/MisiCopy-1.4.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="cjVliZrBfLPeYUZLrm6lanl+x9po9Pz1Ffw7lVjbWup0/L5ATIbHAYo/6pzamMBjUweC0/eN/qfVdLE+f20UCg==" length="3265573"/>
+        </item>
+
+        <item>
             <title>Version 1.4.1</title>
             <pubDate>Wed, 10 Jun 2026 10:01:51 +0000</pubDate>
             <sparkle:version>13</sparkle:version>
