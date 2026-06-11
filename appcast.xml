@@ -8,6 +8,28 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.5.0</title>
+            <pubDate>Thu, 11 Jun 2026 20:03:54 +0000</pubDate>
+            <sparkle:version>17</sparkle:version>
+            <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>🎉 Nouvelle fonction : iPhone Remote</b> — suivez vos copies en temps réel depuis votre iPhone sur le Wi-Fi local. Activation dans Réglages → iPhone, scan d'un QR code, et c'est parti : progression live, vitesse, ETA, journal défilant, pause / reprendre / annuler à distance, notifications de fin de copie.</li>
+                    <li>Architecture sécurisée : authentification HMAC-SHA256 challenge-response constant-time, secret partagé 256 bits, recherche automatique via Bonjour</li>
+                    <li>Sélecteur de langue cliquable en haut à droite (FR / EN / ES) — bascule immédiate</li>
+                    <li>Onglets Réglages 100 % traduits (Général, Renommage, Filtres, Surveillance, Intégrations, iPhone, Avancé)</li>
+                    <li>Menu « Réglages… » dans la barre de menus suit aussi la langue choisie</li>
+                    <li>L'app iPhone Remote arrive prochainement sur l'App Store — la fondation Mac est prête</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.5.0/MisiCopy-1.5.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="MTup77UuWwbyXZ8nkA6FQEZ0li4ld8ZoKpKfcKd1FJfkZMD4YoFWLOWdD9FFYX0q0UbDU9A0TvO7AqlnQwpaDQ==" length="3421757"/>
+        </item>
+
+        <item>
             <title>Version 1.4.4</title>
             <pubDate>Wed, 10 Jun 2026 11:38:44 +0000</pubDate>
             <sparkle:version>16</sparkle:version>
