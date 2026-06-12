@@ -8,6 +8,23 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.5.1</title>
+            <pubDate>Fri, 12 Jun 2026 17:22:52 +0000</pubDate>
+            <sparkle:version>18</sparkle:version>
+            <sparkle:shortVersionString>1.5.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>iCloud activé pour iPhone Remote</b> — votre iPhone peut désormais suivre les copies même quand il n'est PAS sur le même Wi-Fi que le Mac. Les snapshots transitent par votre compte iCloud privé. Fallback automatique : Wi-Fi local quand dispo (latence ~50 ms), iCloud sinon (~10 s).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.5.1/MisiCopy-1.5.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="7iJQlprWR+WbY0pSKz+CCbcHE1DsdorVJCNSqCTeZBDbCN8C4ooRFazRKTFJ2eDH0G4KTSfjVwS/IpQ2mT+0CQ==" length="3447874"/>
+        </item>
+
+        <item>
             <title>Version 1.5.0</title>
             <pubDate>Thu, 11 Jun 2026 20:03:54 +0000</pubDate>
             <sparkle:version>17</sparkle:version>
