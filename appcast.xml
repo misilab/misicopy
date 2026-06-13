@@ -8,6 +8,27 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.6.0</title>
+            <pubDate>Sat, 13 Jun 2026 15:26:14 +0000</pubDate>
+            <sparkle:version>20</sparkle:version>
+            <sparkle:shortVersionString>1.6.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.0</h3>
+                <ul>
+                    <li><b>Sous-dossier REEL par dump</b> (optionnel, dans la Structure DIT) : chaque déchargement de carte crée un <code>REEL_001</code>, <code>REEL_002</code>… numéroté indépendamment par caméra (A_CAM, B_CAM, SON…). Le compteur est sauvegardé à la racine du projet et survit aux redémarrages de l'app.</li>
+                    <li><b>Cancel-friendly</b> : si tu annules une copie en cours, le numéro REEL est libéré — relancer le même dump réutilise le même <code>REEL_NNN</code>.</li>
+                    <li><b>Layout repensé</b> : la Structure DIT est désormais en haut de la colonne de droite, libérant tout l'espace vertical de la colonne de gauche pour les Sources et Destinations.</li>
+                    <li>Fiabilité : snapshot du nom de projet au démarrage de la copie pour éviter qu'un changement mid-copie ne divise les fichiers entre deux dossiers.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.0/MisiCopy-1.6.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="G7AO07OZ0Y7fGOHA36A1/BS244TESCapZk206GIWhtR1VuRC3n3h0Hq+p26Q9XJD2hdXihR/hxgP/GU8rUnPBg==" length="3471476"/>
+        </item>
+
+        <item>
             <title>Version 1.5.1</title>
             <pubDate>Fri, 12 Jun 2026 17:22:52 +0000</pubDate>
             <sparkle:version>18</sparkle:version>
