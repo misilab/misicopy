@@ -8,6 +8,30 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.6.1</title>
+            <pubDate>Sun, 14 Jun 2026 21:26:46 +0000</pubDate>
+            <sparkle:version>21</sparkle:version>
+            <sparkle:shortVersionString>1.6.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.1 — Polish UI niveau pro</h3>
+                <ul>
+                    <li><b>Animations vivantes</b> : compteurs de stats qui s'animent à chaque incrément, glow coloré sur les cartes au changement, bouton principal avec gradient et reflet glissant sur la barre de progression.</li>
+                    <li><b>Banner de fin de copie</b> : succès/erreur/annulation affichés clairement avec icône animée et onde de choc colorée, auto-effacée après 6 s.</li>
+                    <li><b>Drop zones réactives</b> : bordure pointillée animée et icône d'accent quand vous glissez un dossier, hover lift sur tous les éléments interactifs.</li>
+                    <li><b>Barre de capacité sur les destinations</b> : visualisation live de l'espace utilisé/libre avec code couleur sémantique (indigo > 15 GB, orange > 85 %, rouge < 10 GB).</li>
+                    <li><b>Pulse de vie</b> : petit point vert pulsant à côté du nom MisiCopy quand une copie tourne.</li>
+                    <li><b>Polish couleur</b> : la statistique "Erreurs" passe de l'orange au rouge pour respecter la sémantique d'erreur macOS.</li>
+                    <li><b>Background dégradé subtil</b> remplace le gris flat de la fenêtre principale.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.1/MisiCopy-1.6.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="kW85qMtvYk1hOZPR4jU1XVXUxm480gbzn14BSYKnlujMlCJpqLt5taLpwzG323f9u9mw0vp8Oy/HVzd5f41uCg==" length="3554302"/>
+        </item>
+
+        <item>
             <title>Version 1.6.0</title>
             <pubDate>Sat, 13 Jun 2026 15:26:14 +0000</pubDate>
             <sparkle:version>20</sparkle:version>
