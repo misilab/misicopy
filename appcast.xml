@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.6.2</title>
+            <pubDate>Mon, 15 Jun 2026 14:07:40 +0000</pubDate>
+            <sparkle:version>22</sparkle:version>
+            <sparkle:shortVersionString>1.6.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correction iPhone Remote — iCloud</h3>
+                <ul>
+                    <li><b>iCloud fonctionne dès l'activation du toggle</b> — auparavant, le canal iCloud ne s'initialisait qu'après le premier transfert effectif. Désormais le snapshot est publié dès que vous activez "iPhone" dans les Réglages, donc votre iPhone reçoit l'état du Mac immédiatement, même à l'arrêt.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.2/MisiCopy-1.6.2.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="eX3AcxV+lHFEfd10NtXqH2iezydbtoteowNUYgxcMGiobcyW9ZTk6BK1leZ6fx72t690QQK0bxd4C4mLxC31BQ==" length="3554241"/>
+        </item>
+
+        <item>
             <title>Version 1.6.1</title>
             <pubDate>Sun, 14 Jun 2026 21:26:46 +0000</pubDate>
             <sparkle:version>21</sparkle:version>
