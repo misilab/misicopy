@@ -8,6 +8,26 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.6.3</title>
+            <pubDate>Thu, 18 Jun 2026 20:55:46 +0000</pubDate>
+            <sparkle:version>23</sparkle:version>
+            <sparkle:shortVersionString>1.6.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.3 — Mode sombre + traductions complètes</h3>
+                <ul>
+                    <li><b>Mode sombre natif</b> : MisiCopy suit désormais l'apparence système macOS. Clair, sombre ou auto — la fenêtre, les Réglages et toutes les cartes s'adaptent avec ombres et bordures ajustées pour rester lisibles.</li>
+                    <li><b>Traduction complète</b> de l'interface anglaise et espagnole : tous les onglets Réglages (Général, Renommage, Filtres, Surveillance, Intégrations, Avancé) étaient encore en français pour les utilisateurs EN/ES — c'est corrigé (27 nouvelles chaînes localisées).</li>
+                    <li>Statut iCloud dans Réglages → iPhone également traduit (Synchronisé / Publication / En attente).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.3/MisiCopy-1.6.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="oqwAIHLKO8nvFqnUV6/HbkxIj+8s7J9yDq0S6LpS2i7eRV6i49NN6swXgnexgvMrVF6rYTlY5zZwEOZAvp49Cg==" length="3570138"/>
+        </item>
+
+        <item>
             <title>Version 1.6.2</title>
             <pubDate>Mon, 15 Jun 2026 14:07:40 +0000</pubDate>
             <sparkle:version>22</sparkle:version>
