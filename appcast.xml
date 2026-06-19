@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.6.5</title>
+            <pubDate>Fri, 19 Jun 2026 15:08:12 +0000</pubDate>
+            <sparkle:version>25</sparkle:version>
+            <sparkle:shortVersionString>1.6.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.5 — Affinements REEL</h3>
+                <ul>
+                    <li><b>Reset REEL plus sûr</b> : le bouton est désormais désactivé pendant une copie en cours pour éviter qu'un clic accidentel ne soit annulé par la fin du job. Une ligne s'ajoute au journal pour confirmer la réinitialisation sur N destinations.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.5/MisiCopy-1.6.5.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="Dk2VLYeSg2G/bYpuDfeQjPTLcY4HDHl4vP4VKGs/PN/7lPXKSiZ7jg4OG3WCZo3mlcb7DuuEkX713K97ngm7Dw==" length="3578516"/>
+        </item>
+
+        <item>
             <title>Version 1.6.4</title>
             <pubDate>Fri, 19 Jun 2026 14:58:22 +0000</pubDate>
             <sparkle:version>24</sparkle:version>
