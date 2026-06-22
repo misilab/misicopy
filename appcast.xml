@@ -8,6 +8,26 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.7.0</title>
+            <pubDate>Mon, 22 Jun 2026 16:47:16 +0000</pubDate>
+            <sparkle:version>26</sparkle:version>
+            <sparkle:shortVersionString>1.7.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.7.0 — Copies plus rapides</h3>
+                <ul>
+                    <li><b>Buffer I/O adaptatif</b> : 4, 8 ou 16 MB selon la taille du fichier. Gain typique : <b>+15 à +25 %</b> sur les gros fichiers (vidéo, RAW) avec des SSD Thunderbolt ou NVMe. Les petits fichiers gardent un buffer 4 MB pour rester réactifs.</li>
+                    <li><b>F_NOCACHE</b> sur les fichiers ≥ 100 MB : le système macOS reste réactif pendant le déchargement d'une carte 256 Go (les autres apps ne sont plus poussées hors RAM par le buffer cache).</li>
+                    <li>Nettoyage interne : suppression de 150 lignes de code mort, commentaire de doc remis à jour.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.7.0/MisiCopy-1.7.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="2Njv2zmU5C5dzY4VxpNVpmR/yLgpu93IURsnSzj6wdO6JEalfZYGdQTwD3IzmSTxQvcugMdJVeuOXVkeoWUaDA==" length="3579141"/>
+        </item>
+
+        <item>
             <title>Version 1.6.5</title>
             <pubDate>Fri, 19 Jun 2026 15:08:12 +0000</pubDate>
             <sparkle:version>25</sparkle:version>
