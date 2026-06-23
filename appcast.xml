@@ -8,6 +8,27 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.7.1</title>
+            <pubDate>Tue, 23 Jun 2026 21:49:32 +0000</pubDate>
+            <sparkle:version>27</sparkle:version>
+            <sparkle:shortVersionString>1.7.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.7.1 — Bugs surveillance + polish journal</h3>
+                <ul>
+                    <li><b>Fix critique : copies fantômes</b> — Quand le Mac sortait de veille, le mode surveillance pouvait re-déclencher une copie de la même carte ou auto-ajouter un disque externe d'archive contenant un dossier DCIM/Footage/Clips. Désormais : un volume déjà copié dans la session reste protégé, et les disques d'archive non-éjectables ne déclenchent plus que la suggestion manuelle.</li>
+                    <li><b>Barre de progression doublée en épaisseur</b> (6 → 12 px) pour mieux voir l'avancement à distance.</li>
+                    <li><b>Journal d'activité inversé</b> : les nouvelles lignes apparaissent désormais en haut, plus besoin de scroller pour voir l'activité récente.</li>
+                    <li><b>Confirmation avant d'effacer le journal</b> avec message rassurant rappelant que les fichiers copiés ne sont pas concernés.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.7.1/MisiCopy-1.7.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="SDvN7LB051kHy8WELUdv8Li9iJKcBMhkGLPrUyh/HFXImJFNbueI+FIDHIHHkHuzEn9LdDWyRQTQNLm/cj/TDQ==" length="3594013"/>
+        </item>
+
+        <item>
             <title>Version 1.7.0</title>
             <pubDate>Mon, 22 Jun 2026 16:47:16 +0000</pubDate>
             <sparkle:version>26</sparkle:version>
