@@ -8,6 +8,26 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.7.2</title>
+            <pubDate>Wed, 24 Jun 2026 22:35:51 +0000</pubDate>
+            <sparkle:version>28</sparkle:version>
+            <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.7.2 — Filtres persistants + feedback Annulation</h3>
+                <ul>
+                    <li><b>Les filtres d'extension sont mémorisés</b> entre les sessions : vos listes d'inclusion / exclusion (Réglages → Filtres) survivent désormais au redémarrage de l'app et au reboot du Mac.</li>
+                    <li><b>Annulation enregistrée</b> : quand vous cliquez sur "Annuler la copie", le bouton affiche immédiatement "Annulation enregistrée…" et se désactive le temps que la copie s'arrête proprement — fini les 40 clics sur le même bouton.</li>
+                    <li>Le bouton se réactive automatiquement à la fin du run pour le prochain démarrage.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.7.2/MisiCopy-1.7.2.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="5RXF/xhr46GdORYVC0EiTQYhJ2KWLCYdkWZKw/smwE6x1LeQJBANMwh3Xq5iBGYyjzZdU84QJaRS7DFvItACCA==" length="3596511"/>
+        </item>
+
+        <item>
             <title>Version 1.7.1</title>
             <pubDate>Tue, 23 Jun 2026 21:49:32 +0000</pubDate>
             <sparkle:version>27</sparkle:version>
