@@ -8,6 +8,26 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.8.1</title>
+            <pubDate>Sat, 27 Jun 2026 23:22:00 +0000</pubDate>
+            <sparkle:version>30</sparkle:version>
+            <sparkle:shortVersionString>1.8.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.1 — Support compagnon iPhone</h3>
+                <ul>
+                    <li><b>Espace disque destination</b> envoyé au compagnon iPhone : l'app Remote affiche maintenant en temps réel l'espace libre / total de chaque destination, avec barre de remplissage colorée (verte / orange / rouge).</li>
+                    <li><b>Recopier les fichiers en erreur depuis l'iPhone</b> : la commande "Recopier" du Mac est désormais accessible directement depuis le bouton "Recopier les fichiers en erreur" de l'app Remote — pas besoin de revenir devant le Mac.</li>
+                    <li>Prérequis pour l'app <i>MisiCopy Remote 1.1.0</i> (téléchargeable séparément sur l'App Store).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.1/MisiCopy-1.8.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="uMPJLFZZYQW5TmSb0vcVxNp2yRmJEYQczDxwOoURxOIcZip5UEv+KM0E4MLBsp58gy22LJ59eo+yp2svjEkfAA==" length="3620218"/>
+        </item>
+
+        <item>
             <title>Version 1.8.0</title>
             <pubDate>Sat, 27 Jun 2026 23:03:40 +0000</pubDate>
             <sparkle:version>29</sparkle:version>
