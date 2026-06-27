@@ -8,6 +8,27 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.8.0</title>
+            <pubDate>Sat, 27 Jun 2026 23:03:40 +0000</pubDate>
+            <sparkle:version>29</sparkle:version>
+            <sparkle:shortVersionString>1.8.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.0 — Recopie ciblée + REEL depuis le nom de fichier</h3>
+                <ul>
+                    <li><b>Recopier les fichiers en erreur</b> : si une copie se termine avec des erreurs checksum, un nouveau bouton orange "Recopier les fichiers en erreur (N)" apparaît sous le bouton principal. Cliquer relance la copie <b>uniquement sur les fichiers en échec</b> — pas besoin de tout recommencer pour 2 ou 3 fichiers corrompus.</li>
+                    <li><b>Numéro de REEL depuis le nom de fichier</b> : quand le nom des fichiers suit la convention caméra (RED <code>A006_C001_…</code>, ARRI/Sony <code>B017C001_…</code>), MisiCopy lit le numéro directement dans le nom et crée <code>REEL_006</code>, <code>REEL_017</code>, etc. Le compteur séquentiel reste le fallback quand la carte n'a pas de nom parsable.</li>
+                    <li>Audit traductions FR/EN/ES : 15 chaînes en français en dur (statut iCloud, PDF "Aperçu indisponible", checksum manquant…) maintenant traduites. Cohérence espagnole renforcée.</li>
+                    <li>La banner de fin de copie ne reste plus affichée par-dessus la progression d'une nouvelle copie lancée juste après.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.0/MisiCopy-1.8.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="caneZXoqiMmyWDHprTRXEiruBmrYvE+eGMFJgnlqDwP0BTTuyzhlV0e6xJz+2hBnw1BbSoeu5RENia4oaLGlAg==" length="3616984"/>
+        </item>
+
+        <item>
             <title>Version 1.7.2</title>
             <pubDate>Wed, 24 Jun 2026 22:35:51 +0000</pubDate>
             <sparkle:version>28</sparkle:version>
