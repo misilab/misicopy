@@ -8,6 +8,25 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.8.4</title>
+            <pubDate>Wed, 01 Jul 2026 21:03:05 +0000</pubDate>
+            <sparkle:version>33</sparkle:version>
+            <sparkle:shortVersionString>1.8.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.4 — Notification de fin sur iPhone verrouillé</h3>
+                <ul>
+                    <li><b>Vraie notification de fin de copie sur l'iPhone</b> : à la fin d'une copie (succès ou erreur), une notification avec son s'affiche sur l'écran verrouillé de l'iPhone (app MisiCopy Remote), même téléphone en veille et app fermée.</li>
+                    <li>Améliore le suivi à distance ajouté en 1.8.3.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.4/MisiCopy-1.8.4.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="vQwlQzV7kzFFeqL5S7BPu2uU8w4E8Ubl/7re/d6M1VHiDj9AH9QvnO3jTCTatmcl1vzFrdwPRfyrvzLD+DCEAw==" length="3661631"/>
+        </item>
+
+        <item>
             <title>Version 1.8.3</title>
             <pubDate>Wed, 01 Jul 2026 19:09:53 +0000</pubDate>
             <sparkle:version>32</sparkle:version>
