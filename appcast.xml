@@ -8,6 +8,26 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.8.3</title>
+            <pubDate>Wed, 01 Jul 2026 19:09:53 +0000</pubDate>
+            <sparkle:version>32</sparkle:version>
+            <sparkle:shortVersionString>1.8.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.3 — Correctif mémoire gros fichiers + suivi iPhone verrouillé</h3>
+                <ul>
+                    <li><b>Correctif important</b> : la copie de très gros fichiers (40 Go et plus) pouvait faire grimper la mémoire jusqu'à saturer le Mac et faire quitter l'app. La mémoire reste désormais stable quelle que soit la taille du fichier — vous pouvez décharger des cartes de plusieurs centaines de Go sans risque.</li>
+                    <li><b>Live Activity temps réel</b> : le Mac pousse la progression de la copie vers l'écran verrouillé de l'iPhone (app MisiCopy Remote 1.1.0), qui se met à jour en direct même téléphone en veille.</li>
+                    <li>Espace disque des destinations et bouton « Recopier les fichiers en erreur » accessibles depuis l'iPhone.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.3/MisiCopy-1.8.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="7jUDh3aLKxROl1JWoncMAWlPuSHwyZ+hIKarM/3q3eRG2j1Jx1eNjwsxYpOYAQ23+nBpsq7H6IZKz/ZCZistCQ==" length="3657487"/>
+        </item>
+
+        <item>
             <title>Version 1.8.1</title>
             <pubDate>Sat, 27 Jun 2026 23:22:00 +0000</pubDate>
             <sparkle:version>30</sparkle:version>
