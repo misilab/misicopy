@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.8.5</title>
+            <pubDate>Wed, 01 Jul 2026 21:13:45 +0000</pubDate>
+            <sparkle:version>34</sparkle:version>
+            <sparkle:shortVersionString>1.8.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.5 — Espace disque destinations sur iPhone</h3>
+                <ul>
+                    <li>Correction de l'espace disque des destinations affiché sur l'app iPhone : les disques externes / exFAT montraient « 0 Ko libres » à tort. Le vrai espace libre s'affiche désormais correctement.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.5/MisiCopy-1.8.5.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="UXe54p2LluyzUSPYgggeBr0ozo5J+k0HQLjN1siPr4DAgMD5RwXC6Tvc6Dq5J0zQ0uRKrnYMn/tI/Xo1sQqiAg==" length="3662085"/>
+        </item>
+
+        <item>
             <title>Version 1.8.4</title>
             <pubDate>Wed, 01 Jul 2026 21:03:05 +0000</pubDate>
             <sparkle:version>33</sparkle:version>
