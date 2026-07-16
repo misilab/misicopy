@@ -8,6 +8,25 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.9.1</title>
+            <pubDate>Thu, 16 Jul 2026 22:18:32 +0000</pubDate>
+            <sparkle:version>36</sparkle:version>
+            <sparkle:shortVersionString>1.9.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctif 1.9.1 — Vérification seule</h3>
+                <ul>
+                    <li><b>Correctif important du mode « Vérification seule »</b> : des fichiers pourtant bien copiés pouvaient être signalés « manquants » quand la copie d'origine avait été faite un autre jour, avec un autre numéro de REEL ou une disposition différente (structure DIT activée/désactivée entre-temps). La vérification retrouve désormais la copie existante dans toutes les dispositions possibles : toutes les dates, toutes les caméras, tous les REEL, avec ou sans dossier carte/date.</li>
+                    <li>En cas de fichier réellement introuvable, le journal affiche maintenant le chemin complet attendu pour faciliter le diagnostic.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.9.1/MisiCopy-1.9.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="2WgPMQJBjWmZHLxLxCso9YjgGBEO9LfXK8Mq14ysvYPN/6HazI801ZsBtKXwTJIcrasnMpPzivbHEJ+HJ2iuDw==" length="3727263"/>
+        </item>
+
+        <item>
             <title>Version 1.9.0</title>
             <pubDate>Thu, 16 Jul 2026 20:27:08 +0000</pubDate>
             <sparkle:version>35</sparkle:version>
