@@ -8,6 +8,31 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.9.0</title>
+            <pubDate>Thu, 16 Jul 2026 20:27:08 +0000</pubDate>
+            <sparkle:version>35</sparkle:version>
+            <sparkle:shortVersionString>1.9.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.9.0 — Reprise des copies, vérification seule, multi-cartes parallèle</h3>
+                <ul>
+                    <li><b>Vraie reprise après interruption</b> : la progression est sauvegardée fichier par fichier pendant la copie. Annulez, quittez l'app ou éteignez le Mac — au prochain lancement, la copie reprend là où elle s'était arrêtée, en sautant les fichiers déjà copiés et vérifiés.</li>
+                    <li><b>Nouveau mode « Vérification seule »</b> : compare les checksums source ↔ destination sans rien copier. Idéal pour contrôler une copie rapide après coup, re-vérifier un backup ou valider avant d'effacer les cartes.</li>
+                    <li><b>Copie multi-cartes en parallèle</b> : Réglages → Avancé → « Copier les sources en parallèle » — chaque carte a son propre pipeline de copie + vérification (recommandé vers SSD/NVMe).</li>
+                    <li><b>Priorités dans la file d'attente</b> : flèches ↑/↓ pour réordonner les jobs en attente.</li>
+                    <li><b>Bouton rapide « Doublons »</b> dans la fenêtre principale : saute les fichiers déjà présents à destination avec le même checksum.</li>
+                    <li><b>Barre de progression corrigée</b> : elle intègre désormais la phase de vérification — fini le blocage à 100 % pendant que les checksums se terminent.</li>
+                    <li><b>Limite de bande passante globale</b> : en copie parallèle, la limite s'applique au total et non par carte. (Par défaut : illimité — vitesse maximale.)</li>
+                    <li>Manuel utilisateur mis à jour (FR/EN/ES) avec toutes les nouveautés.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.9.0/MisiCopy-1.9.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="JC7SVl0ZP4I/NKzqCTRQ7bWK70eGE7/Mr6Aq2nA0BE3pQLeZS8aP5Yj20wJQKLOoXps0WIpca0jx/AyAR88CDQ==" length="3715840"/>
+        </item>
+
+        <item>
             <title>Version 1.8.5</title>
             <pubDate>Wed, 01 Jul 2026 21:13:45 +0000</pubDate>
             <sparkle:version>34</sparkle:version>
