@@ -8,6 +8,29 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.10.0</title>
+            <pubDate>Sun, 19 Jul 2026 20:14:22 +0000</pubDate>
+            <sparkle:version>38</sparkle:version>
+            <sparkle:shortVersionString>1.10.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.10.0 — Destinations en cascade</h3>
+                <ul>
+                    <li><b>Destinations en cascade</b> : marquez votre disque lent d'un clic (bouton ↳). Il ne sera plus copié depuis la carte mais depuis votre disque rapide, une fois la copie principale vérifiée — <b>la carte est libérée (et éjectée) dès la fin de la copie rapide</b>, pendant que le disque d'archive se remplit tranquillement, avec vérification checksum complète.</li>
+                    <li><b>Badges de vitesse</b> : chaque destination affiche sa vitesse d'écriture mesurée — ⚡ pour le disque le plus rapide, 🐢 pour le plus lent (le candidat idéal à la cascade). Cliquez le badge pour re-mesurer.</li>
+                    <li><b>Boîte de dialogue de fin de copie</b> : un récapitulatif (fichiers vérifiés, volume, durée) s'affiche à la fin — désactivable dans Réglages → Général.</li>
+                    <li><b>Correctif « Vérifier MHL… »</b> : les fichiers .mhl étaient grisés dans le sélecteur (impossibles à choisir) ; l'export MHL était par ailleurs enregistré en .xml. Les deux sont corrigés.</li>
+                    <li>Garde-fou : impossible de basculer la dernière destination directe en cascade (une alerte explique pourquoi).</li>
+                    <li>Manuel utilisateur (FR/EN/ES) mis à jour avec la cascade et les badges de vitesse.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.10.0/MisiCopy-1.10.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="afRuDuG76WHbJgPmBKMFttKrqYqmqHxf4ENe+Lp3+Im3dCg2NGr2QN5LWre4nKG3rGxvUj9mF6poSxNnvnFOCQ==" length="3898299"/>
+        </item>
+
+        <item>
             <title>Version 1.9.2</title>
             <pubDate>Sun, 19 Jul 2026 08:31:27 +0000</pubDate>
             <sparkle:version>37</sparkle:version>
