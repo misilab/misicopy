@@ -8,6 +8,31 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.9.2</title>
+            <pubDate>Sun, 19 Jul 2026 08:31:27 +0000</pubDate>
+            <sparkle:version>37</sparkle:version>
+            <sparkle:shortVersionString>1.9.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.9.2 — Fiabilité de la reprise, interface, réglages</h3>
+                <ul>
+                    <li><b>Reprise renforcée</b> : après une interruption, la copie reprend dans les <b>mêmes dossiers</b> que le run interrompu (même dossier date, même numéro REEL) et valide les fichiers déjà copiés sur leurs chemins réels. Fini les doublons de dossiers après une reprise.</li>
+                    <li><b>Le bouton « Annuler » devient « Interrompre la copie »</b>, avec un rappel sous la barre : la progression est conservée et la copie reprendra où elle s'est arrêtée.</li>
+                    <li><b>Vérification seule</b> : n'écrit plus rien du tout sur les destinations (pas même de rapport), retrouve les copies même faites un autre jour ou dans un autre REEL, et ne peut plus signaler à tort un fichier d'une autre carte.</li>
+                    <li><b>Volumes exacts</b> : la bannière de fin, l'historique et les rapports affichent le volume réellement copié (plus de totaux gonflés par les vérifications).</li>
+                    <li><b>Le mode de copie est verrouillé pendant un transfert</b> — impossible de changer de mode en pleine copie par erreur.</li>
+                    <li><b>Auto-start intelligent</b> : une carte insérée n'est plus « vérifiée » par erreur si le mode Vérification seule est resté actif.</li>
+                    <li><b>Réglage de l'algorithme</b> désormais aussi dans Réglages → Général, avec recommandations.</li>
+                    <li><b>Interface</b> : palette de couleurs froides (cyan/bleu/indigo), barre de progression en dégradé, meilleures performances sur les très grosses cartes (40 000+ fichiers).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.9.2/MisiCopy-1.9.2.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="CGrfOk1pqfHuj5hT76/0xGmnqhYcTfr6+p/JWKX0FH1xSyr19d6nOL14Jv/qbPT6uA2GFD2VCeRhf+kIUeFXDA==" length="3789042"/>
+        </item>
+
+        <item>
             <title>Version 1.9.1</title>
             <pubDate>Thu, 16 Jul 2026 22:18:32 +0000</pubDate>
             <sparkle:version>36</sparkle:version>
