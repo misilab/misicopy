@@ -8,27 +8,6 @@
         <language>fr</language>
 
         <item>
-            <title>Version 1.11.0</title>
-            <pubDate>Mon, 20 Jul 2026 13:09:13 +0000</pubDate>
-            <sparkle:version>39</sparkle:version>
-            <sparkle:shortVersionString>1.11.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:installationType>package</sparkle:installationType>
-            <description><![CDATA[
-                <h3>Nouveautés 1.11.0 — Garde-fous intelligents</h3>
-                <ul>
-                    <li><b>Contrôle pré-vol de l'espace disque</b> : si une destination ne peut pas recevoir le volume complet, la copie est refusée AVANT le premier octet, avec le détail de l'espace manquant. Fini le disque plein découvert à 80 %.</li>
-                    <li><b>Mémoire des cartes</b> : MisiCopy reconnaît une carte déjà déchargée et propose « Re-vérifier · Recopier · Ignorer » au lieu de repartir en copie. Fini le double déchargement — et le formatage d'une carte qu'on croyait sauvegardée.</li>
-                    <li><b>Compteur de journée</b> : « Aujourd'hui : 8 cartes · 1,2 To · 0 erreur » dans l'en-tête, pour le point de fin de journée.</li>
-                    <li><b>Phase cascade sur l'iPhone</b> : MisiCopy Remote affiche « Cascade — cartes libérées ✅ » dès que la copie principale est vérifiée (nécessite la mise à jour de l'app iPhone).</li>
-                </ul>
-            ]]></description>
-            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.11.0/MisiCopy-1.11.0.pkg"
-                       type="application/x-newton-compatible-pkg"
-                       sparkle:edSignature="jHr9BWrvZzOBifoENMnYyTa3GEPp04eVSht2FE5GYm869AXTCGSMI5VT/AAJ/KGlxJ7LstaHX1tJZqBHajlIBg==" length="3936224"/>
-        </item>
-
-        <item>
             <title>Version 1.10.0</title>
             <pubDate>Sun, 19 Jul 2026 20:14:22 +0000</pubDate>
             <sparkle:version>38</sparkle:version>
