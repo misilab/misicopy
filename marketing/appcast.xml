@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.11.2</title>
+            <pubDate>Tue, 11 Aug 2026 16:42:24 +0000</pubDate>
+            <sparkle:version>41</sparkle:version>
+            <sparkle:shortVersionString>1.11.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctifs 1.11.2</h3>
+                <ul>
+                    <li><b>Carte « déjà déchargée »</b> : la bannière n'apparaît plus si la carte a été reformatée ou contient de nouveaux enregistrements depuis la dernière copie.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.11.2/MisiCopy-1.11.2.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="oL8L4rYk9YfiP8us9csb/n54xbeYnE9Z5sAlCWaWS7uHybJ/a8tadAHJ3QktIRORgPv9a/AtTFpdScR/ugtLDw==" length="3937539"/>
+        </item>
+
+        <item>
             <title>Version 1.11.1</title>
             <pubDate>Tue, 11 Aug 2026 14:11:20 +0000</pubDate>
             <sparkle:version>40</sparkle:version>
