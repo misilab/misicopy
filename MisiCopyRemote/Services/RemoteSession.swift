@@ -78,6 +78,11 @@ final class RemoteSession {
             currentActivity = existing
             currentActivitySessionID = existing.attributes.sessionID
         }
+        // Kick off the observation loops that keep `snapshot` in sync.
+        watchLocalChannel()
+        watchCloudChannel()
+        watchDemoChannel()
+        updateSnapshot()
     }
 
     private(set) var activeChannel: ActiveChannel = .none
@@ -107,23 +112,11 @@ final class RemoteSession {
     /// it — we have to resend it ourselves).
     private var cachedLiveActivityToken: (token: String, sessionID: String)?
 
-    /// Convenience accessor for the view layer. Honours the user
-    /// preference; falls back to whichever channel can serve data when
-    /// `auto`.
-    var snapshot: SessionSnapshot? {
-        if isDemoMode { return demo.snapshot }
-        switch preference {
-        case .localOnly:
-            return client.lastSnapshot
-        case .cloudOnly:
-            return cloud.lastSnapshot
-        case .auto:
-            if case .connected = client.status, let s = client.lastSnapshot {
-                return s
-            }
-            return cloud.lastSnapshot
-        }
-    }
+    /// Snapshot exposed to the view layer. Stored (not computed) so SwiftUI
+    /// observes it directly on RemoteSession rather than through a multi-level
+    /// @Observable chain. Updated by watchLocalChannel / watchCloudChannel /
+    /// watchDemoChannel whenever the underlying channel data changes.
+    private(set) var snapshot: SessionSnapshot?
 
     var status: LocalChannelClient.Status { client.status }
 
@@ -159,6 +152,7 @@ final class RemoteSession {
             client.disconnect()
         }
         refreshActiveChannel()
+        updateSnapshot()
     }
 
     private func applyPreferenceSideEffects() {
@@ -189,6 +183,7 @@ final class RemoteSession {
         cloud.disconnect()
         demo.start()
         activeChannel = .none
+        updateSnapshot()
     }
 
     func disableDemoMode() {
@@ -206,6 +201,70 @@ final class RemoteSession {
             activeChannel = .cloud
         } else {
             activeChannel = .none
+        }
+    }
+
+    // MARK: - Snapshot observation
+
+    /// Watches `client.lastSnapshot` and `client.status`. Fires `updateSnapshot()`
+    /// on every change, then re-arms itself so the loop continues for the
+    /// lifetime of the session. Using `withObservationTracking` here bypasses
+    /// the multi-level @Observable chain that SwiftUI can miss when the
+    /// intermediate reference (`client`) is a `let` constant.
+    private func watchLocalChannel() {
+        withObservationTracking {
+            _ = client.lastSnapshot
+            _ = client.status
+        } onChange: { [weak self] in
+            Task { @MainActor [weak self] in
+                guard let self else { return }
+                self.updateSnapshot()
+                self.watchLocalChannel()
+            }
+        }
+    }
+
+    private func watchCloudChannel() {
+        withObservationTracking {
+            _ = cloud.lastSnapshot
+        } onChange: { [weak self] in
+            Task { @MainActor [weak self] in
+                guard let self else { return }
+                self.updateSnapshot()
+                self.watchCloudChannel()
+            }
+        }
+    }
+
+    private func watchDemoChannel() {
+        withObservationTracking {
+            _ = isDemoMode
+            _ = demo.snapshot
+        } onChange: { [weak self] in
+            Task { @MainActor [weak self] in
+                guard let self else { return }
+                self.updateSnapshot()
+                self.watchDemoChannel()
+            }
+        }
+    }
+
+    private func updateSnapshot() {
+        if isDemoMode {
+            snapshot = demo.snapshot
+            return
+        }
+        switch preference {
+        case .localOnly:
+            snapshot = client.lastSnapshot
+        case .cloudOnly:
+            snapshot = cloud.lastSnapshot
+        case .auto:
+            if case .connected = client.status, let s = client.lastSnapshot {
+                snapshot = s
+            } else {
+                snapshot = cloud.lastSnapshot
+            }
         }
     }
 
@@ -298,7 +357,12 @@ final class RemoteSession {
             // activities per app, and we never need more than one for
             // the currently-active Mac.
             endLiveActivity()
-            liveActivityFailedSessionIDs.remove(snap.sessionID)
+            // Do NOT remove snap.sessionID from liveActivityFailedSessionIDs
+            // here. If Activity.request() already failed for this session,
+            // removing the guard and retrying every 500 ms wastes resources
+            // with zero chance of success. When a genuinely new session
+            // starts its ID won't be in the set (timestamps differ), so the
+            // first attempt always gets through.
             startLiveActivity(content: content, snapshot: snap)
         }
 

@@ -147,7 +147,10 @@ final class LocalChannelClient {
                 }
                 // Re-arm only if the socket is still alive.
                 guard let conn = self.connection,
-                      conn.state == .ready else { return }
+                      conn.state == .ready else {
+                    logger.warning("Receive loop stopped: hasConn=\(self.connection != nil, privacy: .public) status=\(String(describing: self.status), privacy: .public)")
+                    return
+                }
                 self.receive()
             }
         }
@@ -165,6 +168,7 @@ final class LocalChannelClient {
                 status = .failed("Clé d'appairage refusée")
                 disconnect()
             case .snapshot(let snap):
+                logger.info("Snapshot received: status=\(snap.status.rawValue, privacy: .public) session=\(snap.sessionID, privacy: .public)")
                 lastSnapshot = snap
             case .pong:
                 break
