@@ -8,6 +8,28 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.11.1</title>
+            <pubDate>Mon, 11 Aug 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>40</sparkle:version>
+            <sparkle:shortVersionString>1.11.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctifs 1.11.1 — Régression copies + synchronisation iPhone</h3>
+                <ul>
+                    <li><b>Correctif critique</b> : les copies ne démarraient plus dans la 1.11.0 — une carte déjà connue de l'historique bloquait silencieusement le flux de détection. Corrigé : la mémoire des cartes affiche toujours la bannière d'information, mais la copie peut être lancée normalement.</li>
+                    <li><b>Progression synchronisée avec l'iPhone</b> : la barre de l'app Remote affichait un pourcentage différent de celui du Mac en mode « Copie + vérification » — le calcul est maintenant identique des deux côtés.</li>
+                    <li><b>ETA iPhone corrigé</b> : le temps restant affiché sur l'iPhone tenait compte de la vérification, il est maintenant correct.</li>
+                    <li>Manuel utilisateur mis à jour (FR/EN/ES).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.11.1/MisiCopy-1.11.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="TODO_SIGNATURE_AFTER_RELEASE_SCRIPT"
+                       length="0"/>
+        </item>
+
+        <item>
             <title>Version 1.10.0</title>
             <pubDate>Sun, 19 Jul 2026 20:14:22 +0000</pubDate>
             <sparkle:version>38</sparkle:version>
