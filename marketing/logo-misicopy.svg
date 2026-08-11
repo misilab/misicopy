@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Brand gradient: cyan → blue → indigo -->
+    <linearGradient id="brand" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#33EBFF"/>
+      <stop offset="0.55" stop-color="#2E8CFF"/>
+      <stop offset="1" stop-color="#4751F5"/>
+    </linearGradient>
+    <!-- Top shine -->
+    <linearGradient id="shine" x1="512" y1="0" x2="512" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <!-- White rim -->
+    <linearGradient id="rim" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.0"/>
+    </linearGradient>
+    <!-- Green badge gradient -->
+    <linearGradient id="green" x1="0" y1="1" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1AC74D"/>
+      <stop offset="1" stop-color="#8CFF73"/>
+    </linearGradient>
+    <!-- Drop shadow for glyph -->
+    <filter id="glyphShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#0A338C" flood-opacity="0.45"/>
+    </filter>
+    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- macOS squircle (approximated rounded rect, corner radius = size × 0.225) -->
+  <rect x="0" y="0" width="1024" height="1024" rx="230" ry="230" fill="url(#brand)"/>
+
+  <!-- Top shine overlay -->
+  <rect x="40" y="40" width="944" height="944" rx="200" ry="200" fill="url(#shine)" opacity="0.7"/>
+
+  <!-- Inner rim highlight -->
+  <rect x="12" y="12" width="1000" height="1000" rx="222" ry="222"
+        fill="none" stroke="url(#rim)" stroke-width="12"/>
+
+  <!-- Shipping box glyph (centered, slightly above middle) -->
+  <g transform="translate(244 200)" filter="url(#glyphShadow)" fill="#FFFFFF">
+    <!-- Box body -->
+    <path d="M 0 130
+             L 268 0
+             L 536 130
+             L 536 430
+             L 268 560
+             L 0 430 Z" opacity="0.96"/>
+    <!-- Left face shading -->
+    <path d="M 0 130 L 268 260 L 268 560 L 0 430 Z" fill="#FFFFFF" opacity="0.78"/>
+    <!-- Right face shading -->
+    <path d="M 536 130 L 268 260 L 268 560 L 536 430 Z" fill="#FFFFFF" opacity="0.92"/>
+    <!-- Top tape strip -->
+    <path d="M 134 65 L 402 195 L 402 245 L 134 115 Z" fill="#E8F5FF" opacity="0.95"/>
+  </g>
+
+  <!-- Green check badge bottom-right -->
+  <g filter="url(#badgeShadow)">
+    <circle cx="792" cy="792" r="164" fill="url(#green)"/>
+    <circle cx="792" cy="792" r="164" fill="none" stroke="#FFFFFF" stroke-width="18"/>
+    <!-- Check mark -->
+    <path d="M 706 800 L 770 862 L 880 720"
+          stroke="#FFFFFF" stroke-width="50" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>

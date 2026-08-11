@@ -1,0 +1,108 @@
+CONTRAT DE LICENCE UTILISATEUR FINAL — MisiCopy
+Édité par MisiLab — misicopy@misiraca.com — www.misicopy.com
+
+Veuillez lire attentivement les présentes Conditions Générales d'Utilisation
+(« CGU ») avant d'installer ou d'utiliser le logiciel MisiCopy (le « Logiciel »).
+En cliquant sur « Continuer » puis sur « Installer », vous reconnaissez avoir
+lu, compris et accepté l'ensemble des dispositions ci-dessous.
+
+
+1. CONCESSION DE LICENCE
+
+MisiLab vous concède une licence d'utilisation personnelle, non exclusive et
+non transférable du Logiciel. Une licence achetée permet l'installation et
+l'activation du Logiciel sur deux (2) ordinateurs maximum appartenant à un
+même utilisateur ou à une même entité juridique.
+
+Une période d'essai gratuite de 7 jours, plafonnée à 25 transferts effectifs,
+est offerte sans nécessité d'activer une clé de licence. Au-delà, l'activation
+d'une licence valide est requise.
+
+
+2. RESTRICTIONS D'USAGE
+
+Vous vous engagez à ne pas :
+  – revendre, louer, sous-licencier ou distribuer le Logiciel ou sa clé ;
+  – décompiler, désassembler, modifier ou créer des œuvres dérivées du
+    Logiciel, sauf dans la limite expresse autorisée par la loi applicable ;
+  – contourner les mesures techniques de protection ou les vérifications de
+    licence intégrées au Logiciel ;
+  – utiliser le Logiciel à des fins illicites ou contraires à l'éthique
+    professionnelle.
+
+
+3. PROPRIÉTÉ INTELLECTUELLE
+
+Le Logiciel, son code source, sa documentation, son interface, ses
+illustrations et l'ensemble des éléments qui le composent restent la
+propriété exclusive de MisiLab. Aucun transfert de droits n'est consenti
+au-delà de la licence d'utilisation décrite à l'article 1.
+
+Les marques, logos et noms commerciaux « MisiCopy », « MisiLab » et
+« MisiRaca » sont la propriété exclusive de MisiLab.
+
+
+4. MISES À JOUR AUTOMATIQUES
+
+Le Logiciel intègre un mécanisme de mise à jour automatique (Sparkle) qui
+peut télécharger et installer les nouvelles versions publiées par MisiLab.
+Vous acceptez explicitement ce mécanisme. Vous pouvez le désactiver à tout
+moment depuis les réglages du Logiciel ou en bloquant les requêtes vers le
+domaine raw.githubusercontent.com depuis votre système.
+
+
+5. CONFIDENTIALITÉ — DONNÉES
+
+Le Logiciel fonctionne entièrement en local sur votre Mac. Aucune donnée
+personnelle, aucun rush, aucun fichier copié n'est transmis à MisiLab. Les
+seules connexions réseau sortantes possibles sont :
+  – la vérification de mise à jour Sparkle (consultation d'un fichier XML
+    public sur GitHub) ;
+  – l'envoi optionnel de webhooks Slack ou génériques, uniquement si vous
+    en configurez explicitement l'URL dans les réglages.
+
+
+6. GARANTIES — RESPONSABILITÉ
+
+Le Logiciel est fourni « en l'état », sans garantie expresse ou implicite,
+notamment de qualité marchande ou d'adéquation à un usage particulier.
+MisiLab s'efforce de produire un logiciel fiable mais ne peut garantir
+l'absence totale de bugs.
+
+Dans toute la mesure permise par la loi applicable, MisiLab ne pourra être
+tenue responsable de tout dommage direct ou indirect — y compris perte de
+données, perte de revenus, interruption d'activité — résultant de
+l'utilisation ou de l'impossibilité d'utiliser le Logiciel. Il vous appartient
+de conserver des sauvegardes de vos données sources.
+
+La responsabilité de MisiLab, si elle devait être engagée, serait limitée au
+montant effectivement payé par vous pour la licence du Logiciel sur les
+douze (12) mois précédant le fait générateur.
+
+
+7. RÉSILIATION
+
+La présente licence prend effet à l'installation du Logiciel et reste en
+vigueur jusqu'à sa résiliation. Elle est résiliée automatiquement et de
+plein droit en cas de manquement à l'une quelconque de ses dispositions.
+À la résiliation, vous devez désinstaller le Logiciel et détruire toutes
+ses copies en votre possession.
+
+
+8. DROIT APPLICABLE — JURIDICTION
+
+Les présentes CGU sont régies par le droit français. Tout litige relatif à
+leur interprétation ou à leur exécution relèvera de la compétence exclusive
+des tribunaux du ressort du siège social de MisiLab, sous réserve des règles
+impératives de protection du consommateur applicables.
+
+
+9. CONTACT
+
+Pour toute question relative à la licence, au support, ou à la facturation :
+misicopy@misiraca.com
+
+Site web : www.misicopy.com
+Téléchargement officiel : github.com/misilab/misicopy/releases
+
+© MisiLab — Tous droits réservés.

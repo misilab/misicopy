@@ -6,20 +6,104 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		054F2E226D02055E7865959B /* MisiCopyWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C8525C81AEF0D232E3D6F /* MisiCopyWidgetsBundle.swift */; };
+		1149A3FA4372E15CF27CB3A1 /* MisiCopyWidgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6577866F164CCD50E8603A38 /* MisiCopyWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4E8360B58BE3D467980AA52B /* CopyActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B166197CAAD5C70F515EC /* CopyActivityAttributes.swift */; };
+		85EAC9D84372137FD3F95A32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB87495B78D48C3E20669919 /* Foundation.framework */; };
+		B0DB2F4A25A7B0D8073A36CB /* CopyLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A231D1F45C72D9B112BAD0 /* CopyLiveActivity.swift */; };
+		D836BA032FD3888C0036A855 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = D836BA022FD3888C0036A855 /* Sparkle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CA234DAE184473B492E33A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8AB273C2FD0C21B008F4F6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D392389BAEC215CEE8AEFBE1;
+			remoteInfo = MisiCopyWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D1EC2FA2BE243C4A1DD227B6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1149A3FA4372E15CF27CB3A1 /* MisiCopyWidgets.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		50A231D1F45C72D9B112BAD0 /* CopyLiveActivity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CopyLiveActivity.swift; sourceTree = "<group>"; };
+		6577866F164CCD50E8603A38 /* MisiCopyWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MisiCopyWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		726C8525C81AEF0D232E3D6F /* MisiCopyWidgetsBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MisiCopyWidgetsBundle.swift; sourceTree = "<group>"; };
+		AB87495B78D48C3E20669919 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C91B166197CAAD5C70F515EC /* CopyActivityAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CopyActivityAttributes.swift; sourceTree = "<group>"; };
 		D8AB27442FD0C21B008F4F6E /* MisiCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisiCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E84B192FD9E6C000EC67E7 /* MisiCopyRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MisiCopyRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D836BA052FD389220036A855 /* Exceptions for "MisiCopy" folder in "MisiCopy" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D8AB27432FD0C21B008F4F6E /* MisiCopy */;
+		};
+		D8E84B6E2FD9E96800EC67E7 /* Exceptions for "MisiCopyRemote" folder in "MisiCopyRemote" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				README.md,
+			);
+			target = D8E84B182FD9E6C000EC67E7 /* MisiCopyRemote */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D8AB27462FD0C21B008F4F6E /* MisiCopy */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D836BA052FD389220036A855 /* Exceptions for "MisiCopy" folder in "MisiCopy" target */,
+			);
 			path = MisiCopy;
+			sourceTree = "<group>";
+		};
+		D8E84B1A2FD9E6C000EC67E7 /* MisiCopyRemote */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D8E84B6E2FD9E96800EC67E7 /* Exceptions for "MisiCopyRemote" folder in "MisiCopyRemote" target */,
+			);
+			path = MisiCopyRemote;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		553CC204BDF54F09F2C00DFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85EAC9D84372137FD3F95A32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8AB27412FD0C21B008F4F6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D836BA032FD3888C0036A855 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84B162FD9E6C000EC67E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,11 +113,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		532BAB790997B3C26CDFBEF5 /* MisiCopyWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				C91B166197CAAD5C70F515EC /* CopyActivityAttributes.swift */,
+				50A231D1F45C72D9B112BAD0 /* CopyLiveActivity.swift */,
+				726C8525C81AEF0D232E3D6F /* MisiCopyWidgetsBundle.swift */,
+			);
+			path = MisiCopyWidgets;
+			sourceTree = "<group>";
+		};
+		76F4D6A31E31D56CF2CC3F29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AB87495B78D48C3E20669919 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		89182295E30403D8E2184691 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76F4D6A31E31D56CF2CC3F29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8AB273B2FD0C21B008F4F6E = {
 			isa = PBXGroup;
 			children = (
 				D8AB27462FD0C21B008F4F6E /* MisiCopy */,
+				D8E84B1A2FD9E6C000EC67E7 /* MisiCopyRemote */,
 				D8AB27452FD0C21B008F4F6E /* Products */,
+				89182295E30403D8E2184691 /* Frameworks */,
+				532BAB790997B3C26CDFBEF5 /* MisiCopyWidgets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				D8AB27442FD0C21B008F4F6E /* MisiCopy.app */,
+				D8E84B192FD9E6C000EC67E7 /* MisiCopyRemote.app */,
+				6577866F164CCD50E8603A38 /* MisiCopyWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +163,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D392389BAEC215CEE8AEFBE1 /* MisiCopyWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E889378CDE625C16AF561615 /* Build configuration list for PBXNativeTarget "MisiCopyWidgets" */;
+			buildPhases = (
+				3DFF9F5BFE4216719A485F69 /* Sources */,
+				553CC204BDF54F09F2C00DFD /* Frameworks */,
+				9552D042C7D12D70863FA58D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MisiCopyWidgets;
+			productName = MisiCopyWidgets;
+			productReference = 6577866F164CCD50E8603A38 /* MisiCopyWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D8AB27432FD0C21B008F4F6E /* MisiCopy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8AB274F2FD0C21B008F4F6E /* Build configuration list for PBXNativeTarget "MisiCopy" */;
@@ -65,9 +197,32 @@
 			);
 			name = MisiCopy;
 			packageProductDependencies = (
+				D836BA022FD3888C0036A855 /* Sparkle */,
 			);
 			productName = MisiCopy;
 			productReference = D8AB27442FD0C21B008F4F6E /* MisiCopy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8E84B182FD9E6C000EC67E7 /* MisiCopyRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8E84B232FD9E6C100EC67E7 /* Build configuration list for PBXNativeTarget "MisiCopyRemote" */;
+			buildPhases = (
+				D8E84B152FD9E6C000EC67E7 /* Sources */,
+				D8E84B162FD9E6C000EC67E7 /* Frameworks */,
+				D8E84B172FD9E6C000EC67E7 /* Resources */,
+				D1EC2FA2BE243C4A1DD227B6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2B2A9A492E294425BBCB905 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D8E84B1A2FD9E6C000EC67E7 /* MisiCopyRemote */,
+			);
+			name = MisiCopyRemote;
+			productName = MisiCopyRemote;
+			productReference = D8E84B192FD9E6C000EC67E7 /* MisiCopyRemote.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -83,6 +238,9 @@
 					D8AB27432FD0C21B008F4F6E = {
 						CreatedOnToolsVersion = 26.5;
 					};
+					D8E84B182FD9E6C000EC67E7 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 				};
 			};
 			buildConfigurationList = D8AB273F2FD0C21B008F4F6E /* Build configuration list for PBXProject "MisiCopy" */;
@@ -94,18 +252,37 @@
 			);
 			mainGroup = D8AB273B2FD0C21B008F4F6E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D836BA012FD3888C0036A855 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D8AB27452FD0C21B008F4F6E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D8AB27432FD0C21B008F4F6E /* MisiCopy */,
+				D8E84B182FD9E6C000EC67E7 /* MisiCopyRemote */,
+				D392389BAEC215CEE8AEFBE1 /* MisiCopyWidgets */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9552D042C7D12D70863FA58D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8AB27422FD0C21B008F4F6E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84B172FD9E6C000EC67E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +292,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3DFF9F5BFE4216719A485F69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E8360B58BE3D467980AA52B /* CopyActivityAttributes.swift in Sources */,
+				B0DB2F4A25A7B0D8073A36CB /* CopyLiveActivity.swift in Sources */,
+				054F2E226D02055E7865959B /* MisiCopyWidgetsBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8AB27402FD0C21B008F4F6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8E84B152FD9E6C000EC67E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +318,75 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A2B2A9A492E294425BBCB905 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MisiCopyWidgets;
+			target = D392389BAEC215CEE8AEFBE1 /* MisiCopyWidgets */;
+			targetProxy = 6CA234DAE184473B492E33A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0E03D8FE35B4D84B2909F482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = SM6L2XLUBA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MisiCopyWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.misilab.MisiCopyRemote.LiveActivity;
+				PRODUCT_NAME = MisiCopyWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAA2EC20B95C3BDA5D228FC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = SM6L2XLUBA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MisiCopyWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.misilab.MisiCopyRemote.LiveActivity;
+				PRODUCT_NAME = MisiCopyWidgets;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		D8AB274D2FD0C21B008F4F6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -250,21 +512,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MisiCopy/MisiCopy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = SM6L2XLUBA;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MisiCopy/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.11.1;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.misilab.MisiCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -282,21 +546,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MisiCopy/MisiCopy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = SM6L2XLUBA;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MisiCopy/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.11.1;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.misilab.MisiCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -306,6 +572,87 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D8E84B212FD9E6C100EC67E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MisiCopyRemote/MisiCopyRemote.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = SM6L2XLUBA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MisiCopyRemote/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.misilab.MisiCopyRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D8E84B222FD9E6C100EC67E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MisiCopyRemote/MisiCopyRemote.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = SM6L2XLUBA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MisiCopyRemote/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.misilab.MisiCopyRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -330,7 +677,44 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		D8E84B232FD9E6C100EC67E7 /* Build configuration list for PBXNativeTarget "MisiCopyRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8E84B212FD9E6C100EC67E7 /* Debug */,
+				D8E84B222FD9E6C100EC67E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E889378CDE625C16AF561615 /* Build configuration list for PBXNativeTarget "MisiCopyWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E03D8FE35B4D84B2909F482 /* Release */,
+				CAA2EC20B95C3BDA5D228FC3 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D836BA012FD3888C0036A855 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D836BA022FD3888C0036A855 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D836BA012FD3888C0036A855 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8AB273C2FD0C21B008F4F6E /* Project object */;
 }

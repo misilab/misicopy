@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+                   xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>MisiCopy</title>
+        <link>https://raw.githubusercontent.com/misilab/misicopy/main/appcast.xml</link>
+        <description>Mises à jour officielles de MisiCopy</description>
+        <language>fr</language>
+
+        <item>
+            <title>Version 1.11.1</title>
+            <pubDate>Mon, 11 Aug 2026 12:00:00 +0000</pubDate>
+            <sparkle:version>40</sparkle:version>
+            <sparkle:shortVersionString>1.11.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctifs 1.11.1 — Régression copies + synchronisation iPhone</h3>
+                <ul>
+                    <li><b>Correctif critique</b> : les copies ne démarraient plus dans la 1.11.0 — une carte déjà connue de l'historique bloquait silencieusement le flux de détection. Corrigé : la mémoire des cartes affiche toujours la bannière d'information, mais la copie peut être lancée normalement.</li>
+                    <li><b>Progression synchronisée avec l'iPhone</b> : la barre de l'app Remote affichait un pourcentage différent de celui du Mac en mode « Copie + vérification » — le calcul est maintenant identique des deux côtés.</li>
+                    <li><b>ETA iPhone corrigé</b> : le temps restant affiché sur l'iPhone tenait compte de la vérification, il est maintenant correct.</li>
+                    <li>Manuel utilisateur mis à jour (FR/EN/ES).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.11.1/MisiCopy-1.11.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="TODO_SIGNATURE_AFTER_RELEASE_SCRIPT"
+                       length="0"/>
+        </item>
+
+        <item>
+            <title>Version 1.10.0</title>
+            <pubDate>Sun, 19 Jul 2026 20:14:22 +0000</pubDate>
+            <sparkle:version>38</sparkle:version>
+            <sparkle:shortVersionString>1.10.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.10.0 — Destinations en cascade</h3>
+                <ul>
+                    <li><b>Destinations en cascade</b> : marquez votre disque lent d'un clic (bouton ↳). Il ne sera plus copié depuis la carte mais depuis votre disque rapide, une fois la copie principale vérifiée — <b>la carte est libérée (et éjectée) dès la fin de la copie rapide</b>, pendant que le disque d'archive se remplit tranquillement, avec vérification checksum complète.</li>
+                    <li><b>Badges de vitesse</b> : chaque destination affiche sa vitesse d'écriture mesurée — ⚡ pour le disque le plus rapide, 🐢 pour le plus lent (le candidat idéal à la cascade). Cliquez le badge pour re-mesurer.</li>
+                    <li><b>Boîte de dialogue de fin de copie</b> : un récapitulatif (fichiers vérifiés, volume, durée) s'affiche à la fin — désactivable dans Réglages → Général.</li>
+                    <li><b>Correctif « Vérifier MHL… »</b> : les fichiers .mhl étaient grisés dans le sélecteur (impossibles à choisir) ; l'export MHL était par ailleurs enregistré en .xml. Les deux sont corrigés.</li>
+                    <li>Garde-fou : impossible de basculer la dernière destination directe en cascade (une alerte explique pourquoi).</li>
+                    <li>Manuel utilisateur (FR/EN/ES) mis à jour avec la cascade et les badges de vitesse.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.10.0/MisiCopy-1.10.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="afRuDuG76WHbJgPmBKMFttKrqYqmqHxf4ENe+Lp3+Im3dCg2NGr2QN5LWre4nKG3rGxvUj9mF6poSxNnvnFOCQ==" length="3898299"/>
+        </item>
+
+        <item>
+            <title>Version 1.9.2</title>
+            <pubDate>Sun, 19 Jul 2026 08:31:27 +0000</pubDate>
+            <sparkle:version>37</sparkle:version>
+            <sparkle:shortVersionString>1.9.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.9.2 — Fiabilité de la reprise, interface, réglages</h3>
+                <ul>
+                    <li><b>Reprise renforcée</b> : après une interruption, la copie reprend dans les <b>mêmes dossiers</b> que le run interrompu (même dossier date, même numéro REEL) et valide les fichiers déjà copiés sur leurs chemins réels. Fini les doublons de dossiers après une reprise.</li>
+                    <li><b>Le bouton « Annuler » devient « Interrompre la copie »</b>, avec un rappel sous la barre : la progression est conservée et la copie reprendra où elle s'est arrêtée.</li>
+                    <li><b>Vérification seule</b> : n'écrit plus rien du tout sur les destinations (pas même de rapport), retrouve les copies même faites un autre jour ou dans un autre REEL, et ne peut plus signaler à tort un fichier d'une autre carte.</li>
+                    <li><b>Volumes exacts</b> : la bannière de fin, l'historique et les rapports affichent le volume réellement copié (plus de totaux gonflés par les vérifications).</li>
+                    <li><b>Le mode de copie est verrouillé pendant un transfert</b> — impossible de changer de mode en pleine copie par erreur.</li>
+                    <li><b>Auto-start intelligent</b> : une carte insérée n'est plus « vérifiée » par erreur si le mode Vérification seule est resté actif.</li>
+                    <li><b>Réglage de l'algorithme</b> désormais aussi dans Réglages → Général, avec recommandations.</li>
+                    <li><b>Interface</b> : palette de couleurs froides (cyan/bleu/indigo), barre de progression en dégradé, meilleures performances sur les très grosses cartes (40 000+ fichiers).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.9.2/MisiCopy-1.9.2.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="CGrfOk1pqfHuj5hT76/0xGmnqhYcTfr6+p/JWKX0FH1xSyr19d6nOL14Jv/qbPT6uA2GFD2VCeRhf+kIUeFXDA==" length="3789042"/>
+        </item>
+
+        <item>
+            <title>Version 1.9.1</title>
+            <pubDate>Thu, 16 Jul 2026 22:18:32 +0000</pubDate>
+            <sparkle:version>36</sparkle:version>
+            <sparkle:shortVersionString>1.9.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctif 1.9.1 — Vérification seule</h3>
+                <ul>
+                    <li><b>Correctif important du mode « Vérification seule »</b> : des fichiers pourtant bien copiés pouvaient être signalés « manquants » quand la copie d'origine avait été faite un autre jour, avec un autre numéro de REEL ou une disposition différente (structure DIT activée/désactivée entre-temps). La vérification retrouve désormais la copie existante dans toutes les dispositions possibles : toutes les dates, toutes les caméras, tous les REEL, avec ou sans dossier carte/date.</li>
+                    <li>En cas de fichier réellement introuvable, le journal affiche maintenant le chemin complet attendu pour faciliter le diagnostic.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.9.1/MisiCopy-1.9.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="2WgPMQJBjWmZHLxLxCso9YjgGBEO9LfXK8Mq14ysvYPN/6HazI801ZsBtKXwTJIcrasnMpPzivbHEJ+HJ2iuDw==" length="3727263"/>
+        </item>
+
+        <item>
+            <title>Version 1.9.0</title>
+            <pubDate>Thu, 16 Jul 2026 20:27:08 +0000</pubDate>
+            <sparkle:version>35</sparkle:version>
+            <sparkle:shortVersionString>1.9.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.9.0 — Reprise des copies, vérification seule, multi-cartes parallèle</h3>
+                <ul>
+                    <li><b>Vraie reprise après interruption</b> : la progression est sauvegardée fichier par fichier pendant la copie. Annulez, quittez l'app ou éteignez le Mac — au prochain lancement, la copie reprend là où elle s'était arrêtée, en sautant les fichiers déjà copiés et vérifiés.</li>
+                    <li><b>Nouveau mode « Vérification seule »</b> : compare les checksums source ↔ destination sans rien copier. Idéal pour contrôler une copie rapide après coup, re-vérifier un backup ou valider avant d'effacer les cartes.</li>
+                    <li><b>Copie multi-cartes en parallèle</b> : Réglages → Avancé → « Copier les sources en parallèle » — chaque carte a son propre pipeline de copie + vérification (recommandé vers SSD/NVMe).</li>
+                    <li><b>Priorités dans la file d'attente</b> : flèches ↑/↓ pour réordonner les jobs en attente.</li>
+                    <li><b>Bouton rapide « Doublons »</b> dans la fenêtre principale : saute les fichiers déjà présents à destination avec le même checksum.</li>
+                    <li><b>Barre de progression corrigée</b> : elle intègre désormais la phase de vérification — fini le blocage à 100 % pendant que les checksums se terminent.</li>
+                    <li><b>Limite de bande passante globale</b> : en copie parallèle, la limite s'applique au total et non par carte. (Par défaut : illimité — vitesse maximale.)</li>
+                    <li>Manuel utilisateur mis à jour (FR/EN/ES) avec toutes les nouveautés.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.9.0/MisiCopy-1.9.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="JC7SVl0ZP4I/NKzqCTRQ7bWK70eGE7/Mr6Aq2nA0BE3pQLeZS8aP5Yj20wJQKLOoXps0WIpca0jx/AyAR88CDQ==" length="3715840"/>
+        </item>
+
+        <item>
+            <title>Version 1.8.5</title>
+            <pubDate>Wed, 01 Jul 2026 21:13:45 +0000</pubDate>
+            <sparkle:version>34</sparkle:version>
+            <sparkle:shortVersionString>1.8.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.5 — Espace disque destinations sur iPhone</h3>
+                <ul>
+                    <li>Correction de l'espace disque des destinations affiché sur l'app iPhone : les disques externes / exFAT montraient « 0 Ko libres » à tort. Le vrai espace libre s'affiche désormais correctement.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.5/MisiCopy-1.8.5.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="UXe54p2LluyzUSPYgggeBr0ozo5J+k0HQLjN1siPr4DAgMD5RwXC6Tvc6Dq5J0zQ0uRKrnYMn/tI/Xo1sQqiAg==" length="3662085"/>
+        </item>
+
+        <item>
+            <title>Version 1.8.4</title>
+            <pubDate>Wed, 01 Jul 2026 21:03:05 +0000</pubDate>
+            <sparkle:version>33</sparkle:version>
+            <sparkle:shortVersionString>1.8.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.4 — Notification de fin sur iPhone verrouillé</h3>
+                <ul>
+                    <li><b>Vraie notification de fin de copie sur l'iPhone</b> : à la fin d'une copie (succès ou erreur), une notification avec son s'affiche sur l'écran verrouillé de l'iPhone (app MisiCopy Remote), même téléphone en veille et app fermée.</li>
+                    <li>Améliore le suivi à distance ajouté en 1.8.3.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.4/MisiCopy-1.8.4.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="vQwlQzV7kzFFeqL5S7BPu2uU8w4E8Ubl/7re/d6M1VHiDj9AH9QvnO3jTCTatmcl1vzFrdwPRfyrvzLD+DCEAw==" length="3661631"/>
+        </item>
+
+        <item>
+            <title>Version 1.8.3</title>
+            <pubDate>Wed, 01 Jul 2026 19:09:53 +0000</pubDate>
+            <sparkle:version>32</sparkle:version>
+            <sparkle:shortVersionString>1.8.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.3 — Correctif mémoire gros fichiers + suivi iPhone verrouillé</h3>
+                <ul>
+                    <li><b>Correctif important</b> : la copie de très gros fichiers (40 Go et plus) pouvait faire grimper la mémoire jusqu'à saturer le Mac et faire quitter l'app. La mémoire reste désormais stable quelle que soit la taille du fichier — vous pouvez décharger des cartes de plusieurs centaines de Go sans risque.</li>
+                    <li><b>Live Activity temps réel</b> : le Mac pousse la progression de la copie vers l'écran verrouillé de l'iPhone (app MisiCopy Remote 1.1.0), qui se met à jour en direct même téléphone en veille.</li>
+                    <li>Espace disque des destinations et bouton « Recopier les fichiers en erreur » accessibles depuis l'iPhone.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.3/MisiCopy-1.8.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="7jUDh3aLKxROl1JWoncMAWlPuSHwyZ+hIKarM/3q3eRG2j1Jx1eNjwsxYpOYAQ23+nBpsq7H6IZKz/ZCZistCQ==" length="3657487"/>
+        </item>
+
+        <item>
+            <title>Version 1.8.1</title>
+            <pubDate>Sat, 27 Jun 2026 23:22:00 +0000</pubDate>
+            <sparkle:version>30</sparkle:version>
+            <sparkle:shortVersionString>1.8.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.1 — Support compagnon iPhone</h3>
+                <ul>
+                    <li><b>Espace disque destination</b> envoyé au compagnon iPhone : l'app Remote affiche maintenant en temps réel l'espace libre / total de chaque destination, avec barre de remplissage colorée (verte / orange / rouge).</li>
+                    <li><b>Recopier les fichiers en erreur depuis l'iPhone</b> : la commande "Recopier" du Mac est désormais accessible directement depuis le bouton "Recopier les fichiers en erreur" de l'app Remote — pas besoin de revenir devant le Mac.</li>
+                    <li>Prérequis pour l'app <i>MisiCopy Remote 1.1.0</i> (téléchargeable séparément sur l'App Store).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.1/MisiCopy-1.8.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="uMPJLFZZYQW5TmSb0vcVxNp2yRmJEYQczDxwOoURxOIcZip5UEv+KM0E4MLBsp58gy22LJ59eo+yp2svjEkfAA==" length="3620218"/>
+        </item>
+
+        <item>
+            <title>Version 1.8.0</title>
+            <pubDate>Sat, 27 Jun 2026 23:03:40 +0000</pubDate>
+            <sparkle:version>29</sparkle:version>
+            <sparkle:shortVersionString>1.8.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.8.0 — Recopie ciblée + REEL depuis le nom de fichier</h3>
+                <ul>
+                    <li><b>Recopier les fichiers en erreur</b> : si une copie se termine avec des erreurs checksum, un nouveau bouton orange "Recopier les fichiers en erreur (N)" apparaît sous le bouton principal. Cliquer relance la copie <b>uniquement sur les fichiers en échec</b> — pas besoin de tout recommencer pour 2 ou 3 fichiers corrompus.</li>
+                    <li><b>Numéro de REEL depuis le nom de fichier</b> : quand le nom des fichiers suit la convention caméra (RED <code>A006_C001_…</code>, ARRI/Sony <code>B017C001_…</code>), MisiCopy lit le numéro directement dans le nom et crée <code>REEL_006</code>, <code>REEL_017</code>, etc. Le compteur séquentiel reste le fallback quand la carte n'a pas de nom parsable.</li>
+                    <li>Audit traductions FR/EN/ES : 15 chaînes en français en dur (statut iCloud, PDF "Aperçu indisponible", checksum manquant…) maintenant traduites. Cohérence espagnole renforcée.</li>
+                    <li>La banner de fin de copie ne reste plus affichée par-dessus la progression d'une nouvelle copie lancée juste après.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.8.0/MisiCopy-1.8.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="caneZXoqiMmyWDHprTRXEiruBmrYvE+eGMFJgnlqDwP0BTTuyzhlV0e6xJz+2hBnw1BbSoeu5RENia4oaLGlAg==" length="3616984"/>
+        </item>
+
+        <item>
+            <title>Version 1.7.2</title>
+            <pubDate>Wed, 24 Jun 2026 22:35:51 +0000</pubDate>
+            <sparkle:version>28</sparkle:version>
+            <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.7.2 — Filtres persistants + feedback Annulation</h3>
+                <ul>
+                    <li><b>Les filtres d'extension sont mémorisés</b> entre les sessions : vos listes d'inclusion / exclusion (Réglages → Filtres) survivent désormais au redémarrage de l'app et au reboot du Mac.</li>
+                    <li><b>Annulation enregistrée</b> : quand vous cliquez sur "Annuler la copie", le bouton affiche immédiatement "Annulation enregistrée…" et se désactive le temps que la copie s'arrête proprement — fini les 40 clics sur le même bouton.</li>
+                    <li>Le bouton se réactive automatiquement à la fin du run pour le prochain démarrage.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.7.2/MisiCopy-1.7.2.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="5RXF/xhr46GdORYVC0EiTQYhJ2KWLCYdkWZKw/smwE6x1LeQJBANMwh3Xq5iBGYyjzZdU84QJaRS7DFvItACCA==" length="3596511"/>
+        </item>
+
+        <item>
+            <title>Version 1.7.1</title>
+            <pubDate>Tue, 23 Jun 2026 21:49:32 +0000</pubDate>
+            <sparkle:version>27</sparkle:version>
+            <sparkle:shortVersionString>1.7.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.7.1 — Bugs surveillance + polish journal</h3>
+                <ul>
+                    <li><b>Fix critique : copies fantômes</b> — Quand le Mac sortait de veille, le mode surveillance pouvait re-déclencher une copie de la même carte ou auto-ajouter un disque externe d'archive contenant un dossier DCIM/Footage/Clips. Désormais : un volume déjà copié dans la session reste protégé, et les disques d'archive non-éjectables ne déclenchent plus que la suggestion manuelle.</li>
+                    <li><b>Barre de progression doublée en épaisseur</b> (6 → 12 px) pour mieux voir l'avancement à distance.</li>
+                    <li><b>Journal d'activité inversé</b> : les nouvelles lignes apparaissent désormais en haut, plus besoin de scroller pour voir l'activité récente.</li>
+                    <li><b>Confirmation avant d'effacer le journal</b> avec message rassurant rappelant que les fichiers copiés ne sont pas concernés.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.7.1/MisiCopy-1.7.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="SDvN7LB051kHy8WELUdv8Li9iJKcBMhkGLPrUyh/HFXImJFNbueI+FIDHIHHkHuzEn9LdDWyRQTQNLm/cj/TDQ==" length="3594013"/>
+        </item>
+
+        <item>
+            <title>Version 1.7.0</title>
+            <pubDate>Mon, 22 Jun 2026 16:47:16 +0000</pubDate>
+            <sparkle:version>26</sparkle:version>
+            <sparkle:shortVersionString>1.7.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.7.0 — Copies plus rapides</h3>
+                <ul>
+                    <li><b>Buffer I/O adaptatif</b> : 4, 8 ou 16 MB selon la taille du fichier. Gain typique : <b>+15 à +25 %</b> sur les gros fichiers (vidéo, RAW) avec des SSD Thunderbolt ou NVMe. Les petits fichiers gardent un buffer 4 MB pour rester réactifs.</li>
+                    <li><b>F_NOCACHE</b> sur les fichiers ≥ 100 MB : le système macOS reste réactif pendant le déchargement d'une carte 256 Go (les autres apps ne sont plus poussées hors RAM par le buffer cache).</li>
+                    <li>Nettoyage interne : suppression de 150 lignes de code mort, commentaire de doc remis à jour.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.7.0/MisiCopy-1.7.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="2Njv2zmU5C5dzY4VxpNVpmR/yLgpu93IURsnSzj6wdO6JEalfZYGdQTwD3IzmSTxQvcugMdJVeuOXVkeoWUaDA==" length="3579141"/>
+        </item>
+
+        <item>
+            <title>Version 1.6.5</title>
+            <pubDate>Fri, 19 Jun 2026 15:08:12 +0000</pubDate>
+            <sparkle:version>25</sparkle:version>
+            <sparkle:shortVersionString>1.6.5</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.5 — Affinements REEL</h3>
+                <ul>
+                    <li><b>Reset REEL plus sûr</b> : le bouton est désormais désactivé pendant une copie en cours pour éviter qu'un clic accidentel ne soit annulé par la fin du job. Une ligne s'ajoute au journal pour confirmer la réinitialisation sur N destinations.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.5/MisiCopy-1.6.5.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="Dk2VLYeSg2G/bYpuDfeQjPTLcY4HDHl4vP4VKGs/PN/7lPXKSiZ7jg4OG3WCZo3mlcb7DuuEkX713K97ngm7Dw==" length="3578516"/>
+        </item>
+
+        <item>
+            <title>Version 1.6.4</title>
+            <pubDate>Fri, 19 Jun 2026 14:58:22 +0000</pubDate>
+            <sparkle:version>24</sparkle:version>
+            <sparkle:shortVersionString>1.6.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.4 — Bugs DIT corrigés</h3>
+                <ul>
+                    <li><b>Espace disque correct sur les disques externes</b> : la barre de capacité affichait "0 Go libre — disque plein" sur les SSD externes (USB-C / Thunderbolt). Désormais l'espace réel est lu correctement quel que soit le format du volume.</li>
+                    <li><b>LUTs routées automatiquement vers 04_LUT/</b> : les fichiers .cube, .3dl, .lut, .csp, .icc/.icm et .dctl arrivent désormais directement dans le dossier LUT du projet quand la Structure DIT est activée — pas besoin de les déplacer après la copie.</li>
+                    <li><b>Réinitialisation du compteur REEL</b> : nouveau bouton "Réinitialiser le compteur REEL" sous le toggle REEL. Idéal quand un projet se termine et que vous voulez repartir à REEL_001 sur le même disque.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.4/MisiCopy-1.6.4.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="gfpsupixpMBZM5kWKEinPg3C6NPPZjEXgkq10aJe5q3z9EEDRcjlM+4Di+CrP9nyMROuVUsz0N8jQewLGZbvAw==" length="3576771"/>
+        </item>
+
+        <item>
+            <title>Version 1.6.3</title>
+            <pubDate>Thu, 18 Jun 2026 20:55:46 +0000</pubDate>
+            <sparkle:version>23</sparkle:version>
+            <sparkle:shortVersionString>1.6.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.3 — Mode sombre + traductions complètes</h3>
+                <ul>
+                    <li><b>Mode sombre natif</b> : MisiCopy suit désormais l'apparence système macOS. Clair, sombre ou auto — la fenêtre, les Réglages et toutes les cartes s'adaptent avec ombres et bordures ajustées pour rester lisibles.</li>
+                    <li><b>Traduction complète</b> de l'interface anglaise et espagnole : tous les onglets Réglages (Général, Renommage, Filtres, Surveillance, Intégrations, Avancé) étaient encore en français pour les utilisateurs EN/ES — c'est corrigé (27 nouvelles chaînes localisées).</li>
+                    <li>Statut iCloud dans Réglages → iPhone également traduit (Synchronisé / Publication / En attente).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.3/MisiCopy-1.6.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="oqwAIHLKO8nvFqnUV6/HbkxIj+8s7J9yDq0S6LpS2i7eRV6i49NN6swXgnexgvMrVF6rYTlY5zZwEOZAvp49Cg==" length="3570138"/>
+        </item>
+
+        <item>
+            <title>Version 1.6.2</title>
+            <pubDate>Mon, 15 Jun 2026 14:07:40 +0000</pubDate>
+            <sparkle:version>22</sparkle:version>
+            <sparkle:shortVersionString>1.6.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correction iPhone Remote — iCloud</h3>
+                <ul>
+                    <li><b>iCloud fonctionne dès l'activation du toggle</b> — auparavant, le canal iCloud ne s'initialisait qu'après le premier transfert effectif. Désormais le snapshot est publié dès que vous activez "iPhone" dans les Réglages, donc votre iPhone reçoit l'état du Mac immédiatement, même à l'arrêt.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.2/MisiCopy-1.6.2.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="eX3AcxV+lHFEfd10NtXqH2iezydbtoteowNUYgxcMGiobcyW9ZTk6BK1leZ6fx72t690QQK0bxd4C4mLxC31BQ==" length="3554241"/>
+        </item>
+
+        <item>
+            <title>Version 1.6.1</title>
+            <pubDate>Sun, 14 Jun 2026 21:26:46 +0000</pubDate>
+            <sparkle:version>21</sparkle:version>
+            <sparkle:shortVersionString>1.6.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.1 — Polish UI niveau pro</h3>
+                <ul>
+                    <li><b>Animations vivantes</b> : compteurs de stats qui s'animent à chaque incrément, glow coloré sur les cartes au changement, bouton principal avec gradient et reflet glissant sur la barre de progression.</li>
+                    <li><b>Banner de fin de copie</b> : succès/erreur/annulation affichés clairement avec icône animée et onde de choc colorée, auto-effacée après 6 s.</li>
+                    <li><b>Drop zones réactives</b> : bordure pointillée animée et icône d'accent quand vous glissez un dossier, hover lift sur tous les éléments interactifs.</li>
+                    <li><b>Barre de capacité sur les destinations</b> : visualisation live de l'espace utilisé/libre avec code couleur sémantique (indigo > 15 GB, orange > 85 %, rouge < 10 GB).</li>
+                    <li><b>Pulse de vie</b> : petit point vert pulsant à côté du nom MisiCopy quand une copie tourne.</li>
+                    <li><b>Polish couleur</b> : la statistique "Erreurs" passe de l'orange au rouge pour respecter la sémantique d'erreur macOS.</li>
+                    <li><b>Background dégradé subtil</b> remplace le gris flat de la fenêtre principale.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.1/MisiCopy-1.6.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="kW85qMtvYk1hOZPR4jU1XVXUxm480gbzn14BSYKnlujMlCJpqLt5taLpwzG323f9u9mw0vp8Oy/HVzd5f41uCg==" length="3554302"/>
+        </item>
+
+        <item>
+            <title>Version 1.6.0</title>
+            <pubDate>Sat, 13 Jun 2026 15:26:14 +0000</pubDate>
+            <sparkle:version>20</sparkle:version>
+            <sparkle:shortVersionString>1.6.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.6.0</h3>
+                <ul>
+                    <li><b>Sous-dossier REEL par dump</b> (optionnel, dans la Structure DIT) : chaque déchargement de carte crée un <code>REEL_001</code>, <code>REEL_002</code>… numéroté indépendamment par caméra (A_CAM, B_CAM, SON…). Le compteur est sauvegardé à la racine du projet et survit aux redémarrages de l'app.</li>
+                    <li><b>Cancel-friendly</b> : si tu annules une copie en cours, le numéro REEL est libéré — relancer le même dump réutilise le même <code>REEL_NNN</code>.</li>
+                    <li><b>Layout repensé</b> : la Structure DIT est désormais en haut de la colonne de droite, libérant tout l'espace vertical de la colonne de gauche pour les Sources et Destinations.</li>
+                    <li>Fiabilité : snapshot du nom de projet au démarrage de la copie pour éviter qu'un changement mid-copie ne divise les fichiers entre deux dossiers.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.6.0/MisiCopy-1.6.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="G7AO07OZ0Y7fGOHA36A1/BS244TESCapZk206GIWhtR1VuRC3n3h0Hq+p26Q9XJD2hdXihR/hxgP/GU8rUnPBg==" length="3471476"/>
+        </item>
+
+        <item>
+            <title>Version 1.5.1</title>
+            <pubDate>Fri, 12 Jun 2026 17:22:52 +0000</pubDate>
+            <sparkle:version>18</sparkle:version>
+            <sparkle:shortVersionString>1.5.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>iCloud activé pour iPhone Remote</b> — votre iPhone peut désormais suivre les copies même quand il n'est PAS sur le même Wi-Fi que le Mac. Les snapshots transitent par votre compte iCloud privé. Fallback automatique : Wi-Fi local quand dispo (latence ~50 ms), iCloud sinon (~10 s).</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.5.1/MisiCopy-1.5.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="7iJQlprWR+WbY0pSKz+CCbcHE1DsdorVJCNSqCTeZBDbCN8C4ooRFazRKTFJ2eDH0G4KTSfjVwS/IpQ2mT+0CQ==" length="3447874"/>
+        </item>
+
+        <item>
+            <title>Version 1.5.0</title>
+            <pubDate>Thu, 11 Jun 2026 20:03:54 +0000</pubDate>
+            <sparkle:version>17</sparkle:version>
+            <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>🎉 Nouvelle fonction : iPhone Remote</b> — suivez vos copies en temps réel depuis votre iPhone sur le Wi-Fi local. Activation dans Réglages → iPhone, scan d'un QR code, et c'est parti : progression live, vitesse, ETA, journal défilant, pause / reprendre / annuler à distance, notifications de fin de copie.</li>
+                    <li>Architecture sécurisée : authentification HMAC-SHA256 challenge-response constant-time, secret partagé 256 bits, recherche automatique via Bonjour</li>
+                    <li>Sélecteur de langue cliquable en haut à droite (FR / EN / ES) — bascule immédiate</li>
+                    <li>Onglets Réglages 100 % traduits (Général, Renommage, Filtres, Surveillance, Intégrations, iPhone, Avancé)</li>
+                    <li>Menu « Réglages… » dans la barre de menus suit aussi la langue choisie</li>
+                    <li>L'app iPhone Remote arrive prochainement sur l'App Store — la fondation Mac est prête</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.5.0/MisiCopy-1.5.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="MTup77UuWwbyXZ8nkA6FQEZ0li4ld8ZoKpKfcKd1FJfkZMD4YoFWLOWdD9FFYX0q0UbDU9A0TvO7AqlnQwpaDQ==" length="3421757"/>
+        </item>
+
+        <item>
+            <title>Version 1.4.4</title>
+            <pubDate>Wed, 10 Jun 2026 11:38:44 +0000</pubDate>
+            <sparkle:version>16</sparkle:version>
+            <sparkle:shortVersionString>1.4.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Bouton « BUG ? » discret en bas à droite</b> de la fenêtre — un clic ouvre votre client mail pré-rempli pour signaler un problème (vers <code>misicopy@misiraca.com</code>)</li>
+                    <li>Nouvelle adresse de contact : <code>misicopy@misiraca.com</code> (au lieu de <code>contact@misiraca.com</code>) — appliquée partout (manuel, EULA, README, scripts)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.4/MisiCopy-1.4.4.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="h6380jnBrI70e5m+o5pWTtBuFBj8RBqPeYPq5aynEknsX3FGpft2MruZsn7BT4pTcltGGKiKMVyFSXv+CzfMDQ==" length="3273761"/>
+        </item>
+
+        <item>
+            <title>Version 1.4.3</title>
+            <pubDate>Wed, 10 Jun 2026 11:13:06 +0000</pubDate>
+            <sparkle:version>15</sparkle:version>
+            <sparkle:shortVersionString>1.4.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Correctif majeur d'affichage en mode sombre macOS</b> — l'application restait illisible (texte blanc sur fond blanc) chez les utilisateurs ayant macOS en thème sombre. L'app est maintenant verrouillée en mode clair, garantissant une lisibilité totale.</li>
+                    <li>Le bouton « Acheter — 49,90 € » dans le panneau Licence devient « Faire un don » (cohérent avec la nouvelle philosophie gratuite de l'app)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.3/MisiCopy-1.4.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="cjVliZrBfLPeYUZLrm6lanl+x9po9Pz1Ffw7lVjbWup0/L5ATIbHAYo/6pzamMBjUweC0/eN/qfVdLE+f20UCg==" length="3265573"/>
+        </item>
+
+        <item>
+            <title>Version 1.4.1</title>
+            <pubDate>Wed, 10 Jun 2026 10:01:51 +0000</pubDate>
+            <sparkle:version>13</sparkle:version>
+            <sparkle:shortVersionString>1.4.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Sélecteur de langue en un clic</b> dans le coin haut-droit de la fenêtre : un clic sur <code>FR / EN / ES</code> ouvre la liste des trois langues avec la langue courante cochée</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.1/MisiCopy-1.4.1.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="a+SKvd7Y8UbvdgwY7K98CO0Kq5j/B1dwu3s1wxtGNcM9LpgbPMMwYD1fCW8VIx/1KpCP7whnZtIon1TKrnpOCg==" length="3265038"/>
+        </item>
+
+        <item>
+            <title>Version 1.4.0</title>
+            <pubDate>Wed, 10 Jun 2026 09:45:01 +0000</pubDate>
+            <sparkle:version>12</sparkle:version>
+            <sparkle:shortVersionString>1.4.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>MisiCopy devient gratuit</b> — plus de période d'essai, plus de limite de copies. Toutes les fonctions sont débloquées pour tout le monde.</li>
+                    <li><b>Bouton « Faire un don »</b> en haut à droite et dans le menu MisiCopy → soutenez le développement via <a href="https://payhip.com/b/ITG5N">payhip.com/b/ITG5N</a></li>
+                    <li>Rappel discret à la fermeture de l'application proposant de faire un don. Les donateurs reçoivent une clé d'enregistrement qui désactive ce rappel.</li>
+                    <li><b>Détection auto des sources audio</b> : un dossier dominé par des fichiers WAV / BWF / AIFF / FLAC est automatiquement étiqueté <code>SON</code> et rangé dans le dossier SON de l'arborescence DIT (avant la copie). Un seul fichier audio glissé est également détecté.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.4.0/MisiCopy-1.4.0.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="pC5XgyslSIelVlJpOJXb33TnHam5VS/Z0vlNxypB3/y5j8bDuEex7O9NmwN2HXLtr83DAIB9BNcXcS7S48C1BQ==" length="3261530"/>
+        </item>
+
+        <item>
+            <title>Version 1.3.4</title>
+            <pubDate>Tue, 09 Jun 2026 08:28:36 +0000</pubDate>
+            <sparkle:version>11</sparkle:version>
+            <sparkle:shortVersionString>1.3.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Fini la boîte de dialogue trousseau</b> à la fin de chaque copie ("MisiCopy veut utiliser vos informations confidentielles…") — le compteur d'essai est désormais stocké dans les Préférences, seule la clé de licence reste dans le trousseau</li>
+                    <li>Migration transparente : les utilisateurs en période d'essai conservent leurs jours et copies restantes</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.4/MisiCopy-1.3.4.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="vZGut0QYfKiv8qIR7+zC55pYZln/v9vAv6Dp9M0/jX1ASGxEITIT9vE6hP7HNa59pM/AD6de8VhC/VAax9N9Cw==" length="3248346"/>
+        </item>
+
+        <item>
+            <title>Version 1.3.3</title>
+            <pubDate>Tue, 09 Jun 2026 07:10:00 +0000</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.3.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Nouvel installer .pkg</b> avec assistant d'installation standard macOS, écran d'acceptation des CGU MisiLab, et confirmation par mot de passe administrateur (plus de drag-and-drop)</li>
+                    <li>Site web mis à jour partout : <b>www.misicopy.com</b> (au lieu de misiraca.com) — visible dans les rapports PDF, HTML, le footer de l'app et le manuel</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.3/MisiCopy-1.3.3.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="wqEMTcY5GqJqhrXvsE30+6lQC0bw3DyuXdVCGik/GUMCFnyvjY3VvUHc8bK/+TI50Ib40sGPuLRnQLPChm+XCw==" length="3245542"/>
+        </item>
+
+        <item>
+            <title>Version 1.3.2</title>
+            <pubDate>Tue, 09 Jun 2026 00:48:00 +0000</pubDate>
+            <sparkle:version>9</sparkle:version>
+            <sparkle:shortVersionString>1.3.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Copie multi-destinations en parallèle</b> — une seule lecture source fan-out vers toutes les destinations simultanément (les hardwares modernes avec disques indépendants verront jusqu'à ×2 le débit)</li>
+                    <li><b>Vraie barre de progression dans l'icône du Dock</b> en plus du badge texte</li>
+                    <li>Pourcentage correct en multi-destinations (`totalBytes × N` au lieu de plafonner à 100% trop tôt)</li>
+                    <li>Annulation respectée pendant la copie parallèle</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.2/MisiCopy-1.3.2.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="w6rDR5TbQ3a6yV+oRaXgGxEif+tBXrkY5RUiPVhyFXBc/HPqVsaPyp7TFpuAi1L3oZ/7bEitgjPeYWwtBY32Bg==" length="3475402"/>
+        </item>
+
+        <item>
+            <title>Version 1.3.1</title>
+            <pubDate>Tue, 09 Jun 2026 00:00:00 +0000</pubDate>
+            <sparkle:version>8</sparkle:version>
+            <sparkle:shortVersionString>1.3.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Vérification automatique des mises à jour forcée à chaque démarrage — les utilisateurs qui avaient un auto-check désactivé en UserDefaults seront enfin notifiés des nouvelles versions</li>
+                    <li>Premier check immédiat au lancement (3 s après), puis toutes les heures — fini d'attendre que la prochaine MAJ soit visible</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.1/MisiCopy-1.3.1.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="dXxCiwI7gjuJIKzVQgzwPP9wH9XhBueHOgrJvpnNynuaKctSfZVGl/iwhJPZjvUGL1MKxWTbcKBKqVOBpaddCQ==" length="3475420"/>
+        </item>
+
+        <item>
+            <title>Version 1.3.0</title>
+            <pubDate>Mon, 08 Jun 2026 22:35:00 +0000</pubDate>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>1.3.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Copies plus rapides</b> : ~17% de gain mesuré sur Codex/ARRI grâce à un nouveau pipeline d'I/O (buffer 4 MiB, double-buffer async lecture/écriture, hash source combiné à la copie, vérification destination en arrière-plan)</li>
+                    <li>Espace libre des destinations affiché en live (rafraîchi toutes les 5 s)</li>
+                    <li>Bouton éjecter direct sur chaque destination</li>
+                    <li>Détection caméra élargie : matche aussi le style ARRI/Sony <code>A001C001_…</code> en plus de RED <code>A001_C001_…</code></li>
+                    <li>Persistance complète des réglages Structure DIT : le toggle et le nom du projet sont maintenant mémorisés entre les sessions</li>
+                    <li>Rapports PDF + MHL horodatés (plus d'écrasement quand plusieurs copies dans la même journée)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.3.0/MisiCopy-1.3.0.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="57LKVDsvWhuUinPrLZf1Tl6UPZsXJ6+ou2+d1vf5V0cIDLwTa/eJWUVrd9x4vJDGqurb5pxkz48vH7vvYvrDAw==" length="3498552"/>
+        </item>
+
+        <item>
+            <title>Version 1.2.3</title>
+            <pubDate>Mon, 08 Jun 2026 19:50:00 +0000</pubDate>
+            <sparkle:version>6</sparkle:version>
+            <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Mises à jour automatiques renforcées : vérification toutes les heures (au lieu de 24 h), plus de prompt d'autorisation au 1er lancement</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.3/MisiCopy-1.2.3.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="SeYAFqIe2fW86FuaIHz5+xHh1X6a1/yeE8GSTwj8zFwCc25FAVTKJdOMXf72JluvWWJEXtWSk8cVqdEAZqoTBQ==" length="3438557"/>
+        </item>
+
+        <item>
+            <title>Version 1.2.2</title>
+            <pubDate>Mon, 08 Jun 2026 19:11:00 +0000</pubDate>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Détection caméra (A_CAM / B_CAM…) élargie : matche aussi le style ARRI/Sony <code>A001C001_…</code> en plus de RED <code>A001_C001_…</code></li>
+                    <li>Recherche en profondeur dans l'arborescence — les fichiers planqués dans <code>DCIM/100ARRI/</code> sont maintenant détectés</li>
+                    <li>Détection synchrone : plus de race condition avec le mode surveillance + auto-start</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.2/MisiCopy-1.2.2.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="uGjtkuNI5oy2w6BkFlctH9jKwk3tLrfGMLmlGmFdyKqc3905Uo/OdFXmkZzj+5eikUdhmb4N2pV27pLCX4wtDw==" length="3463197"/>
+        </item>
+
+        <item>
+            <title>Version 1.2.1</title>
+            <pubDate>Mon, 08 Jun 2026 18:49:46 +0000</pubDate>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Espace libre / capacité totale affichés en live sur chaque destination (rafraîchi toutes les 5 s, orange si &lt; 10 Go)</li>
+                    <li>Bouton éjecter sur chaque destination, actif quand aucune copie n'est en cours</li>
+                    <li>Rapports PDF + MHL horodatés (HHMMSS) — fini l'écrasement quand on fait plusieurs copies sur la même journée en mode DIT</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.1/MisiCopy-1.2.1.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="u143SZiPWebTVKoOtOgCEO+tXvxtYTbyDvdzyZ8BH3zlVaWWD/QEVWHxH8KOM/hw/iFUKgKtzIOoFnwB/v0+BQ==" length="3443766"/>
+        </item>
+
+        <item>
+            <title>Version 1.2.0</title>
+            <pubDate>Sun, 07 Jun 2026 22:43:18 +0000</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li><b>Structure DIT</b> — arborescence pro automatique : 00_INFOS / 01_RUSHES/&lt;date&gt;/&lt;cam&gt;/&lt;carte&gt; / 02_MHL / 03_PROXY / 04_LUT, avec rapport PDF et MHL rangés au bon dossier</li>
+                    <li>Détection auto de la caméra (A_CAM, B_CAM…) à partir du nom du 1er clip — A001_, B001_, etc.</li>
+                    <li>Personnalisation complète dans Réglages → Structure DIT : renommer chaque dossier, ajouter des dossiers customs (05_EDIT, MASTER_AUDIO…), changer le préfixe du rapport. Tout est persisté entre les sessions.</li>
+                    <li>Plus de freeze à la fin des copies (PDF + MHL générés en arrière-plan)</li>
+                    <li>Plus de freeze sur le branchement d'une carte avec surveillance + auto-start (détection caméra déchargée)</li>
+                    <li>Plus de freeze lors de l'éjection des cartes Codex / ARRI / Sony</li>
+                    <li>Sécurité : noms de dossier sanitizés (impossible de sortir du dossier projet)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.2.0/MisiCopy-1.2.0.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="1KXejzOOgS9mZuphyn+4RSwlGJpn15sbTAMVAP2LxfzLvoGobX6463S7Wtzxwb8H8j4VcCl47fRc09ppxvdzDw==" length="3416407"/>
+        </item>
+
+        <item>
+            <title>Version 1.1.0</title>
+            <pubDate>Sun, 07 Jun 2026 16:53:43 +0000</pubDate>
+            <sparkle:version>1.1.0</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Pourcentage de progression sur le bouton « Lancer la copie »</li>
+                    <li>Regroupement par plan dans le rapport PDF (DPX, EXR, ARRIRAW, CinemaDNG)</li>
+                    <li>Détection des cartes ARRI Codex / Sony XDCAM / RED Mag / Panasonic AVCHD</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.1.0/MisiCopy-1.1.0.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="zhm5ouWCaLYty5efgk+b6vmEF2qW8n4Chx1RyeTc23+mGh7M21BIN7U0R/I2JcppRlnzdkupIFKEx7uGiKClAw==" length="3293617"/>
+        </item>
+
+        <item>
+            <title>Version 1.0.2</title>
+            <pubDate>Fri, 05 Jun 2026 22:51:21 +0000</pubDate>
+            <sparkle:version>1.0.2</sparkle:version>
+            <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Mises à jour automatiques (Sparkle)</li>
+                    <li>Auto-éjection corrigée pour les lecteurs SD intégrés au Mac</li>
+                    <li>Rapport PDF : toutes les vignettes affichées (paginées si besoin)</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.0.2/MisiCopy-1.0.2.dmg"
+                       type="application/octet-stream"
+                       sparkle:edSignature="LDauGrusAq3mpAsHvSxhDRaXRKQ249dcdbxpjArJNfsp96ngveXEw0jQMDxWuSBYUQBnYX3weoH8uTjav5l/Cg==" length="3263611"/>
+        </item>
+
+    </channel>
+</rss>

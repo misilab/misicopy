@@ -1,0 +1,25 @@
+# Build artifacts
+build/
+out/
+*.xcarchive/
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Keys / secrets (never commit)
+*.p8
+*.p12
+*private*.key
+misicopy-sparkle-private.key

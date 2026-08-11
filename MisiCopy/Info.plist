@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/misilab/misicopy/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>bxP11zE5Pla4VRO1J3UhVM3TRD4WUFdkKNDPWFWjU/I=</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
+	<key>SUScheduledCheckInterval</key>
+	<integer>3600</integer>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>MisiCopy utilise le Wi-Fi local pour laisser votre iPhone suivre la progression de la copie en temps réel.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_misicopy._tcp</string>
+	</array>
+</dict>
+</plist>
