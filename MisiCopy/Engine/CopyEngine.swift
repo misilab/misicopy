@@ -3035,6 +3035,8 @@ final class CopyEngine {
     /// from the session history (newest first). Matches both the volume
     /// itself and any source folder inside it. Verify-only sessions and
     /// simulations don't count — nothing was copied.
+    /// Returns nil when the card has files modified after the offload date —
+    /// i.e. the card was reformatted or new recordings were made since.
     private func lastSuccessfulOffload(volumePath: String) -> PreviousOffload? {
         let normalized = volumePath.hasSuffix("/") ? String(volumePath.dropLast()) : volumePath
         guard let record = history.records.first(where: { record in
@@ -3044,9 +3046,33 @@ final class CopyEngine {
                     return p == normalized || p.hasPrefix(normalized + "/")
                 }
         }) else { return nil }
+        // If any file on the card is newer than the copy date, the card
+        // has been reformatted or had new recordings since the last offload.
+        let volumeURL = URL(fileURLWithPath: normalized)
+        if hasFilesNewerThan(record.startDate, in: volumeURL) { return nil }
         return PreviousOffload(date: record.startDate,
                                files: record.verified,
                                bytes: record.totalBytes)
+    }
+
+    /// Scans up to 300 regular files at `url` (same cap used by camera
+    /// detection) and returns true as soon as one is found whose modification
+    /// date is strictly after `date`. Skips hidden files.
+    nonisolated private func hasFilesNewerThan(_ date: Date, in url: URL) -> Bool {
+        let fm = FileManager.default
+        let keys: [URLResourceKey] = [.isRegularFileKey, .contentModificationDateKey]
+        guard let enumerator = fm.enumerator(at: url,
+                                             includingPropertiesForKeys: keys,
+                                             options: [.skipsHiddenFiles]) else { return false }
+        var checked = 0
+        while let next = enumerator.nextObject() as? URL, checked < 300 {
+            checked += 1
+            guard let values = try? next.resourceValues(forKeys: Set(keys)),
+                  values.isRegularFile == true,
+                  let modDate = values.contentModificationDate else { continue }
+            if modDate > date { return true }
+        }
+        return false
     }
 
     /// True when the root of `url` contains directory markers typical of
