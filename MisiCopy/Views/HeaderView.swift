@@ -96,27 +96,38 @@ struct HeaderView: View {
 
     @ViewBuilder
     private var donationControl: some View {
-        if case .licensed = license.status {
+        switch license.status {
+        case .licensed:
             HStack(spacing: 4) {
-                Image(systemName: "heart.fill").foregroundStyle(.pink)
-                Text(engine.l10n.donateBadge).font(.system(size: 11, weight: .bold))
+                Image(systemName: "checkmark.seal.fill").foregroundStyle(.green)
+                Text(engine.l10n.badgeLicensed).font(.system(size: 11, weight: .bold))
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
-            .background(Capsule().fill(Color.pink.opacity(0.12)))
-        } else {
+            .background(Capsule().fill(Color.green.opacity(0.12)))
+        case .trial(let days, let transfers):
+            HStack(spacing: 4) {
+                Image(systemName: "clock.fill").foregroundStyle(.orange)
+                Text(engine.l10n.licenseTrialRemaining(days: days, transfers: transfers))
+                    .font(.system(size: 11, weight: .semibold))
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(Color.orange.opacity(0.12)))
+        case .expired:
             Button {
                 if let url = URL(string: LicenseConfig.purchaseURL) {
                     NSWorkspace.shared.open(url)
                 }
             } label: {
                 HStack(spacing: 4) {
-                    Image(systemName: "heart.fill")
-                    Text(engine.l10n.donateButton).font(.system(size: 11, weight: .semibold))
+                    Image(systemName: "cart.fill")
+                    Text(engine.l10n.licenseBuyAt(LicenseConfig.priceLabel))
+                        .font(.system(size: 11, weight: .semibold))
                 }
             }
             .buttonStyle(.borderedProminent)
-            .tint(.pink)
+            .tint(.red)
             .controlSize(.small)
         }
     }

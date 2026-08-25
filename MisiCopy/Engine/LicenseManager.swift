@@ -117,14 +117,17 @@ final class LicenseManager {
 
     func refreshStatus() {
         touchLastSeen()
-        // MisiCopy is free since 1.4.0 — non-licensed users are always
-        // unlocked (no day / transfer expiry). The licence key only
-        // silences the donation reminder shown on quit.
         if let key = keychain.get(kLicenseKey), Self.validate(key: key) {
             let label = keychain.get(kLicenseEmail) ?? key
             status = .licensed(email: label)
         } else {
-            status = .trial(daysLeft: Int.max, transfersLeft: Int.max)
+            let daysLeft = max(0, LicenseConfig.trialDays - elapsedDays)
+            let transfersLeft = max(0, LicenseConfig.trialTransfers - transferCount)
+            if daysLeft == 0 || transfersLeft == 0 {
+                status = .expired
+            } else {
+                status = .trial(daysLeft: daysLeft, transfersLeft: transfersLeft)
+            }
         }
     }
 

@@ -26,7 +26,7 @@ enum LicenseConfig {
     static let trialDays = 7
     static let trialTransfers = 25
     static let machinesPerLicense = 2
-    static let priceLabel = "49,90 €"
+    static let priceLabel = "79,90 €"
     static let purchaseURL = "https://payhip.com/b/ITG5N"
     /// Embedded HMAC secret used to verify keys. CHANGE THIS BEFORE SHIPPING.
     static let activationSecret = "SFdn24PFXu5axNMG7qhZojUNCCq5NEvPpWQTMkuoja8NEecJq3WetsLF+amMF1zE"

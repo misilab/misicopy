@@ -1,6 +1,6 @@
 # MisiCopy
 
-App macOS de copie sécurisée — vendue 49,90 € sur [payhip.com/b/ITG5N](https://payhip.com/b/ITG5N)
+App macOS de copie sécurisée — vendue 79,90 € sur [payhip.com/b/ITG5N](https://payhip.com/b/ITG5N)
 
 ## 🚀 Sortir une nouvelle version
 

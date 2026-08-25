@@ -362,9 +362,8 @@ struct MisiCopyApp: App {
     }
 }
 
-/// Shows a donation reminder when the user quits the app, unless they have
-/// activated a registration key (the "thank you" gift to donors). Wired up
-/// to the SwiftUI app via `@NSApplicationDelegateAdaptor`.
+/// Shows a purchase reminder when the user quits the app and the trial has
+/// expired. Wired up to the SwiftUI app via `@NSApplicationDelegateAdaptor`.
 @MainActor
 final class MisiCopyAppDelegate: NSObject, NSApplicationDelegate {
     var license: LicenseManager?
@@ -374,17 +373,15 @@ final class MisiCopyAppDelegate: NSObject, NSApplicationDelegate {
     nonisolated override init() { super.init() }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        // Skip donation reminder during an active copy so Cmd-Q stays
-        // responsive (the engine will tear down its own work).
         if engine?.isRunning == true { return .terminateNow }
         guard let license else { return .terminateNow }
-        if case .licensed = license.status { return .terminateNow }
+        guard case .expired = license.status else { return .terminateNow }
         let strings = l10n?() ?? Localization(language: .fr)
 
         let alert = NSAlert()
         alert.messageText = strings.donateQuitTitle
         alert.informativeText = strings.donateQuitBody
-        alert.alertStyle = .informational
+        alert.alertStyle = .warning
         alert.addButton(withTitle: strings.donateButton)
         alert.addButton(withTitle: strings.donateQuitContinue)
 

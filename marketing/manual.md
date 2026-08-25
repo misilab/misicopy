@@ -1,6 +1,6 @@
 # MisiCopy
 
-Manuel utilisateur · User manual · Manual de usuario · Version 1.11.1
+Manuel utilisateur · User manual · Manual de usuario · Version 1.12.0
 
 ---
 

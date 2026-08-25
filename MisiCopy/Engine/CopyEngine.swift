@@ -1110,8 +1110,10 @@ final class CopyEngine {
 
     func start() {
         guard !isRunning, !isFinalizing else { return }
-        // MisiCopy is now free — no licence gate. The licence key only
-        // silences the donation reminder on quit (.licensed status).
+        if let license, case .expired = license.status {
+            log(.error, l10n.logLicenseExpired)
+            return
+        }
         guard !sources.isEmpty else {
             log(.error, l10n.logNoSource)
             return

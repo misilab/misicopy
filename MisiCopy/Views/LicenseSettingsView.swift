@@ -54,10 +54,10 @@ struct LicenseSettingsView: View {
                                 NSWorkspace.shared.open(url)
                             }
                         } label: {
-                            Label(l10n.donateButton, systemImage: "heart.fill")
+                            Label(l10n.licenseBuyAt(LicenseConfig.priceLabel), systemImage: "cart.fill")
                         }
                         .buttonStyle(.borderedProminent)
-                        .tint(.pink)
+                        .tint(.blue)
                     }
                 } header: {
                     Label(l10n.licenseFieldKey, systemImage: "key.fill")
@@ -75,18 +75,18 @@ struct LicenseSettingsView: View {
     @ViewBuilder
     private var statusRow: some View {
         switch license.status {
-        case .trial:
-            row(icon: "heart.fill", color: .pink,
-                title: l10n.licenseStateFree,
-                subtitle: l10n.licenseStateFreeHint)
+        case .trial(let days, let transfers):
+            row(icon: "clock.fill", color: .orange,
+                title: l10n.licenseStateTrial,
+                subtitle: l10n.licenseTrialRemaining(days: days, transfers: transfers))
         case .licensed:
             row(icon: "checkmark.seal.fill", color: .green,
                 title: l10n.licenseStateActive,
                 subtitle: nil)
         case .expired:
-            row(icon: "heart.fill", color: .pink,
-                title: l10n.licenseStateFree,
-                subtitle: l10n.licenseStateFreeHint)
+            row(icon: "xmark.circle.fill", color: .red,
+                title: l10n.licenseStateExpired,
+                subtitle: l10n.logLicenseExpired)
         }
     }
 

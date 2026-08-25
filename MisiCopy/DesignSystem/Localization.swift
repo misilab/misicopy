@@ -931,16 +931,16 @@ struct Localization {
     }
     var menuDonate: String {
         switch language {
-        case .fr: return "Faire un don…"
-        case .en: return "Donate…"
-        case .es: return "Hacer una donación…"
+        case .fr: return "Acheter MisiCopy…"
+        case .en: return "Buy MisiCopy…"
+        case .es: return "Comprar MisiCopy…"
         }
     }
     var donateButton: String {
         switch language {
-        case .fr: return "Faire un don"
-        case .en: return "Donate"
-        case .es: return "Donar"
+        case .fr: return "Acheter MisiCopy"
+        case .en: return "Buy MisiCopy"
+        case .es: return "Comprar MisiCopy"
         }
     }
     var donateBadge: String {
@@ -952,19 +952,19 @@ struct Localization {
     }
     var donateQuitTitle: String {
         switch language {
-        case .fr: return "Merci d'utiliser MisiCopy"
-        case .en: return "Thanks for using MisiCopy"
-        case .es: return "Gracias por usar MisiCopy"
+        case .fr: return "Essai expiré"
+        case .en: return "Trial expired"
+        case .es: return "Prueba expirada"
         }
     }
     var donateQuitBody: String {
         switch language {
         case .fr:
-            return "MisiCopy est un logiciel libre, mais son développement, sa maintenance et sa distribution ont un coût. Si l'application vous est utile, pensez à faire un don à son auteur — chaque contribution m'encourage à continuer à l'améliorer.\n\nEn tant que donateur, vous recevrez une clé d'enregistrement qui désactive cette alerte."
+            return "Votre essai de \(LicenseConfig.trialDays) jours est terminé. Achetez MisiCopy pour continuer à l'utiliser sans limite — un seul achat, mises à jour incluses."
         case .en:
-            return "MisiCopy is free software, but developing, maintaining and distributing it has a cost. If the app is useful to you, please consider making a donation to its author — every contribution helps me keep improving it.\n\nDonors receive a registration key that disables this reminder."
+            return "Your \(LicenseConfig.trialDays)-day trial has ended. Purchase MisiCopy to keep using it without limits — one purchase, updates included."
         case .es:
-            return "MisiCopy es software libre, pero desarrollarlo, mantenerlo y distribuirlo tiene un coste. Si la aplicación te resulta útil, considera hacer una donación a su autor — cada contribución me anima a seguir mejorándola.\n\nLos donantes reciben una clave de registro que desactiva este recordatorio."
+            return "Tu prueba de \(LicenseConfig.trialDays) días ha finalizado. Compra MisiCopy para seguir usándolo sin límites — una sola compra, actualizaciones incluidas."
         }
     }
     var donateQuitContinue: String {
