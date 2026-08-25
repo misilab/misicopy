@@ -8,21 +8,23 @@
         <language>fr</language>
 
         <item>
-            <title>Version 1.11.2</title>
-            <pubDate>Tue, 11 Aug 2026 16:42:24 +0000</pubDate>
-            <sparkle:version>41</sparkle:version>
-            <sparkle:shortVersionString>1.11.2</sparkle:shortVersionString>
+            <title>Version 1.12</title>
+            <pubDate>Tue, 25 Aug 2026 19:31:23 +0000</pubDate>
+            <sparkle:version>42</sparkle:version>
+            <sparkle:shortVersionString>1.12</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:installationType>package</sparkle:installationType>
             <description><![CDATA[
-                <h3>Correctifs 1.11.2</h3>
+                <h3>MisiCopy 1.12 — Modèle payant</h3>
                 <ul>
-                    <li><b>Carte « déjà déchargée »</b> : la bannière n'apparaît plus si la carte a été reformatée ou contient de nouveaux enregistrements depuis la dernière copie.</li>
+                    <li><b>Essai 7 jours / 25 transferts</b> : le compteur d'essai est maintenant actif. Pendant l'essai, toutes les fonctionnalités sont disponibles sans restriction.</li>
+                    <li><b>Achat unique 79,90 €</b> : activez votre clé reçue après achat sur Payhip dans Réglages → Licence.</li>
+                    <li><b>Badge d'état</b> : orange (jours restants), rouge + bouton Acheter (expiré), vert LICENCE (activé).</li>
                 </ul>
             ]]></description>
-            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.12.0/MisiCopy-1.11.2.pkg"
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.12.0/MisiCopy-1.12.pkg"
                        type="application/x-newton-compatible-pkg"
-                       sparkle:edSignature="oL8L4rYk9YfiP8us9csb/n54xbeYnE9Z5sAlCWaWS7uHybJ/a8tadAHJ3QktIRORgPv9a/AtTFpdScR/ugtLDw==" length="3937539"/>
+                       sparkle:edSignature="dvIbs5qjFk5QabyWRKMpOj3kvTR2/gUcs+b4VJEuvBITcTTtsOM4BvSJfIcGaCWn+8Ni6Iej8HE//q0YZAbwCQ==" length="3939305"/>
         </item>
 
         <item>
