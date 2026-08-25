@@ -20,7 +20,7 @@
                     <li><b>Carte « déjà déchargée »</b> : la bannière n'apparaît plus si la carte a été reformatée ou contient de nouveaux enregistrements depuis la dernière copie.</li>
                 </ul>
             ]]></description>
-            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.11.2/MisiCopy-1.11.2.pkg"
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.12.0/MisiCopy-1.11.2.pkg"
                        type="application/x-newton-compatible-pkg"
                        sparkle:edSignature="oL8L4rYk9YfiP8us9csb/n54xbeYnE9Z5sAlCWaWS7uHybJ/a8tadAHJ3QktIRORgPv9a/AtTFpdScR/ugtLDw==" length="3937539"/>
         </item>
