@@ -8,6 +8,29 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.14</title>
+            <pubDate>Sun, 30 Aug 2026 20:20:47 +0000</pubDate>
+            <sparkle:version>45</sparkle:version>
+            <sparkle:shortVersionString>1.14</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.14 — Allemand, Italien, dialog post-annulation, son de fin</h3>
+                <ul>
+                    <li><b>Interface en allemand et en italien</b> : toute l'interface MisiCopy est maintenant disponible en 5 langues (FR / EN / ES / DE / IT) — sélecteur de langue en haut à droite.</li>
+                    <li><b>Dialog post-annulation</b> : quand une copie est interrompue, MisiCopy propose de supprimer les fichiers partiellement copiés (pour repartir de zéro) ou de les conserver pour reprendre plus tard.</li>
+                    <li><b>Son de fin de copie</b> : son « Glass » quand la copie réussit, « Funk » en cas d'erreur — indépendant des notifications système.</li>
+                    <li><b>Correctifs moteur</b> : la sauvegarde du manifest REEL journalise désormais les erreurs (plus d'échec silencieux), le reset du compteur REEL n'incrémente plus en cas d'erreur de suppression.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.14/MisiCopy-1.14.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="xou44qQ6b4TMv8qh0626Y3Tv8VcCPdTC058QLBRGdmAL5iHle2iJU2k4/AwrA3kyjvQ81dsapwf0d0Ha99b8Ag==" length="4012091"/>
+        </item>
+
+
+
+        <item>
             <title>Version 1.13</title>
             <pubDate>Sun, 30 Aug 2026 18:32:38 +0000</pubDate>
             <sparkle:version>43</sparkle:version>
@@ -759,3 +782,4 @@
 
     </channel>
 </rss>
+
