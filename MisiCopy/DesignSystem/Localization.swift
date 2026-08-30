@@ -1594,6 +1594,20 @@ struct Localization {
         case .es: return "Cada descarga de tarjeta crea REEL_001, REEL_002… numerado por cámara"
         }
     }
+    var ditProxyToggleTitle: String {
+        switch language {
+        case .fr: return "Copier les proxys caméra"
+        case .en: return "Copy camera proxies"
+        case .es: return "Copiar proxies de cámara"
+        }
+    }
+    var ditProxyToggleSubtitle: String {
+        switch language {
+        case .fr: return "Route SUB/, PROXY/, suffixe S01… vers 03_PROXY/ au lieu de 01_RUSHES/"
+        case .en: return "Routes SUB/, PROXY/, S01… files to 03_PROXY/ instead of 01_RUSHES/"
+        case .es: return "Enruta SUB/, PROXY/, S01… a 03_PROXY/ en lugar de 01_RUSHES/"
+        }
+    }
     var ditReelResetButton: String {
         switch language {
         case .fr: return "Réinitialiser le compteur REEL"

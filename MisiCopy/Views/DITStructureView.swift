@@ -63,6 +63,16 @@ struct DITStructureView: View {
                         .foregroundStyle(.red)
                         .disabled(engine.isRunning)
                     }
+                    Toggle(isOn: $engine.ditCopyProxyEnabled) {
+                        VStack(alignment: .leading, spacing: 1) {
+                            Text(engine.l10n.ditProxyToggleTitle)
+                                .font(Theme.Typography.cardTitle())
+                            Text(engine.l10n.ditProxyToggleSubtitle)
+                                .font(Theme.Typography.cardSubtitle())
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .toggleStyle(.switch)
                     Text(previewLine)
                         .font(.system(.caption, design: .monospaced))
                         .foregroundStyle(.secondary)
@@ -77,6 +87,7 @@ struct DITStructureView: View {
         .onChange(of: engine.ditMode) { _, _ in engine.saveDITSettings() }
         .onChange(of: engine.projectName) { _, _ in engine.saveDITSettings() }
         .onChange(of: engine.reelSubfolderEnabled) { _, _ in engine.saveDITSettings() }
+        .onChange(of: engine.ditCopyProxyEnabled) { _, _ in engine.saveDITSettings() }
         .confirmationDialog(engine.l10n.ditReelResetConfirmTitle,
                             isPresented: $showReelResetConfirm,
                             titleVisibility: .visible) {

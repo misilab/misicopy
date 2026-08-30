@@ -151,6 +151,11 @@ final class CopyEngine {
     var ditFolderMHL: String = "02_MHL"
     var ditFolderProxy: String = "03_PROXY"
     var ditFolderLUT: String = "04_LUT"
+    /// When `true` (default), files detected as camera-recorded proxies
+    /// (Sony SUB/, Blackmagic Proxy/, Canon PROXY/, FX3/FX6 S01 suffix…)
+    /// are automatically routed to `03_PROXY/` instead of `01_RUSHES/`.
+    /// Set to `false` if you prefer to copy all footage to `01_RUSHES/`.
+    var ditCopyProxyEnabled: Bool = true
     /// Prefix of the auto-generated DIT report filename. Final form is
     /// `<prefix>_<JJMMAA>.pdf`.
     var ditReportPrefix: String = "rapport_DIT"
@@ -421,6 +426,8 @@ final class CopyEngine {
         var projectName: String?
         // Added in 1.6.0 — REEL subfolder per dump.
         var reelSubfolder: Bool?
+        // Added in 1.13.0 — auto-route proxy files to 03_PROXY/.
+        var copyProxy: Bool?
     }
 
     private func loadDITSettings() {
@@ -435,6 +442,7 @@ final class CopyEngine {
         if let enabled = s.enabled { ditMode = enabled }
         if let name = s.projectName { projectName = name }
         if let reel = s.reelSubfolder { reelSubfolderEnabled = reel }
+        if let cp = s.copyProxy { ditCopyProxyEnabled = cp }
     }
 
     /// Persists the DIT folder customisations + the toggle + the project
@@ -451,7 +459,8 @@ final class CopyEngine {
             extraFolders: ditExtraFolders,
             enabled: ditMode,
             projectName: projectName,
-            reelSubfolder: reelSubfolderEnabled
+            reelSubfolder: reelSubfolderEnabled,
+            copyProxy: ditCopyProxyEnabled
         ))
     }
 
@@ -2708,6 +2717,55 @@ final class CopyEngine {
         return Self.lutExtensions.contains(ext)
     }
 
+    /// Folder names used by camera manufacturers for their on-board proxy
+    /// recordings. Detection is path-based: if any *intermediate* component
+    /// of the relative path (not the filename itself) matches one of these
+    /// names (case-insensitive), the file is considered a proxy and routed
+    /// to `03_PROXY/` instead of `01_RUSHES/`.
+    ///
+    /// Known conventions:
+    ///   Sony FX9/VENICE/XDCAM → `Sub/` subfolder alongside main clips
+    ///   Blackmagic BMPCC       → `Proxy/` subfolder on the card
+    ///   Canon Cinema EOS       → `PROXY/` subfolder
+    ///   ARRI ALEXA 35          → `PROXIES/` subfolder
+    ///   DJI Ronin 4D           → `PROXY/` subfolder
+    ///   Generic workflows      → `LORES/`, `LOWRES/`, `H264/`, `H265/`
+    private static let proxyFolderNames: Set<String> = [
+        "proxy", "proxies", "sub",
+        "lores", "lowres", "low_res",
+        "h264", "h.264", "h265", "h.265",
+        "prxy", "prx"
+    ]
+
+    /// Sony FX3 / FX6 sub-recording: the proxy stem ends with at least one
+    /// digit, then S + 2 digits (e.g. `C0001S01.MP4` alongside `C0001.MP4`).
+    /// Requiring a leading digit avoids false positives on editorial names
+    /// like `MASTER_S01.mov` or `edit_S02.mp4`.
+    private static let sonyStemRegex = try! NSRegularExpression(
+        pattern: "\\d+S\\d{2}$", options: .caseInsensitive)
+
+    /// Returns `true` when the file is identified as a camera-recorded proxy
+    /// via either:
+    ///   1. Folder match — an intermediate component of `relativePath` matches
+    ///      a known manufacturer proxy folder (PROXY/, Sub/, PROXIES/, etc.)
+    ///   2. Sony FX3/FX6 filename suffix — stem ends with S + 2 digits
+    ///      (e.g. `C0001S01.MP4`), the sub-recording laid beside the main clip.
+    private func isProxyFile(_ item: FileItem) -> Bool {
+        // 1 — folder-based (FX9, VENICE, Blackmagic, Canon, ARRI, DJI…)
+        let parent = (item.relativePath as NSString).deletingLastPathComponent
+        if !parent.isEmpty {
+            let folderMatch = parent
+                .components(separatedBy: "/")
+                .filter { !$0.isEmpty }
+                .contains { Self.proxyFolderNames.contains($0.lowercased()) }
+            if folderMatch { return true }
+        }
+        // 2 — Sony FX3 / FX6 filename suffix (S01, S02…)
+        let stem = (item.displayName as NSString).deletingPathExtension
+        let range = NSRange(stem.startIndex..., in: stem)
+        return Self.sonyStemRegex.firstMatch(in: stem, range: range) != nil
+    }
+
     private func destinationURL(for item: FileItem, in destination: Destination) -> URL {
         if ditActive {
             // LUT files bypass the per-camera/per-day routing and land
@@ -2716,6 +2774,17 @@ final class CopyEngine {
             if isLUTFile(item) {
                 let lutFolder = nonEmpty(ditFolderLUT, fallback: Self.defaultDITFolderLUT)
                 let root = ditRoot(in: destination).appending(path: lutFolder)
+                return root.appending(path: item.displayName)
+            }
+            // Proxy files recorded by the camera (Sony SUB/, Blackmagic
+            // Proxy/, Canon PROXY/, ARRI PROXIES/, DJI PROXY/ …) land in
+            // `03_PROXY/<date>/<cam>/` instead of `01_RUSHES/`.
+            if ditCopyProxyEnabled && isProxyFile(item) {
+                let proxyFolder = nonEmpty(ditFolderProxy, fallback: Self.defaultDITFolderProxy)
+                let root = ditRoot(in: destination)
+                    .appending(path: proxyFolder)
+                    .appending(path: ditDateStamp)
+                    .appending(path: ditCameraFolder(for: item))
                 return root.appending(path: item.displayName)
             }
             let root = ditRoot(in: destination)
