@@ -8,6 +8,27 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.13</title>
+            <pubDate>Sun, 30 Aug 2026 18:32:38 +0000</pubDate>
+            <sparkle:version>43</sparkle:version>
+            <sparkle:shortVersionString>1.13</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>MisiCopy 1.13 — Routage automatique des proxys caméra</h3>
+                <ul>
+                    <li><b>Mode DIT : proxys routés automatiquement vers 03_PROXY/</b> — MisiCopy détecte les fichiers proxy enregistrés par la caméra et les place directement dans le bon dossier, sans manipulation manuelle après la copie.</li>
+                    <li>Sony FX9 / VENICE / XDCAM → dossier <code>Sub/</code> · Sony FX3 / FX6 → suffixe fichier <code>S01</code>, <code>S02</code>…</li>
+                    <li>Blackmagic BMPCC / URSA → <code>Proxy/</code> · Canon C70 / C300 / C500 / R5C → <code>PROXY/</code> · ARRI ALEXA 35 → <code>PROXIES/</code> · DJI Ronin 4D → <code>PROXY/</code></li>
+                    <li>Nouveau toggle dans la section Structure DIT pour activer ou désactiver ce routage.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.13/MisiCopy-1.13.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="53hQHcNuGqkig4Q8f9rxna4lESSV55Crc3lWQ3022erx6ehgVArhNyWKMV6wHBOILlAo78wKBeZOJ5A+k0a3Cg==" length="3946670"/>
+        </item>
+
+        <item>
             <title>Version 1.12</title>
             <pubDate>Tue, 25 Aug 2026 19:31:23 +0000</pubDate>
             <sparkle:version>42</sparkle:version>
