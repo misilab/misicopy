@@ -103,6 +103,23 @@ struct ContentView: View {
                     duration: engine.formatDuration(summary.duration)))
             }
         }
+        .confirmationDialog(
+            engine.l10n.cancelCleanupTitle,
+            isPresented: Binding(
+                get: { engine.showCancelCleanupDialog },
+                set: { if !$0 { engine.keepPartialCopies() } }),
+            titleVisibility: .visible
+        ) {
+            Button(engine.l10n.cancelCleanupDelete(count: engine.cancelCleanupFileCount),
+                   role: .destructive) {
+                engine.deletePartialCopies()
+            }
+            Button(engine.l10n.cancelCleanupKeep, role: .cancel) {
+                engine.keepPartialCopies()
+            }
+        } message: {
+            Text(engine.l10n.cancelCleanupMessage(count: engine.cancelCleanupFileCount))
+        }
     }
 
     private var configurationColumn: some View {

@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 import AppKit
 import UserNotifications
+import IOKit.pwr_mgt
 
 /// Token-bucket rate limiter shared by every concurrent copy pipeline,
 /// so the user's bandwidth cap applies to the AGGREGATE throughput —
@@ -323,6 +324,9 @@ final class CopyEngine {
     private let ditSettingsStore = JSONFileStore(filename: "dit-settings.json")
     /// One shared limiter for the whole engine — see `BandwidthLimiter`.
     private let bandwidthLimiter = BandwidthLimiter()
+    /// IOKit power assertion ID — non-zero while a copy is running.
+    /// Prevents macOS from sleeping mid-transfer on AC and battery.
+    private var sleepAssertionID: IOPMAssertionID = 0
     /// Depth-1 verification pipeline, one chain per source root: while
     /// file N+1 is being copied, the verification of file N runs in its
     /// root's task. The next process() call for the same root awaits it
@@ -367,6 +371,14 @@ final class CopyEngine {
     /// click and the actual cancellation. Without this, the user clicks
     /// repeatedly because nothing visible changes immediately.
     private(set) var cancelRequested = false
+
+    /// Whether the user should be asked to delete the partial copies after
+    /// a cancel. Only set for fresh (non-resume) runs with at least one
+    /// file written — so the user can't accidentally delete files from a
+    /// previously completed offload.
+    var showCancelCleanupDialog = false
+    private var cancelCleanupTargets: [[String]] = []
+    private var runWasResume = false
 
     /// When `true`, the next `beginRun()` reuses the already-populated
     /// `files` array as-is and `run()` iterates only `retryIndices`
@@ -859,6 +871,63 @@ final class CopyEngine {
         log(.warning, l10n.logCancelRequested)
     }
 
+    /// Called when the user confirms they want to delete the partial copies
+    /// left by a cancelled run. Removes every file that was written during
+    /// the interrupted run, then clears the resume state so the next start
+    /// is clean.
+    func deletePartialCopies() {
+        showCancelCleanupDialog = false
+        let targets = cancelCleanupTargets
+        cancelCleanupTargets = []
+        // Erase resume state — the files are being deleted, resuming would
+        // try to skip files that no longer exist.
+        pendingResumeCompleted = [:]
+        pendingResumeTargets = [:]
+        completedThisRun = [:]
+        completedTargets = [:]
+        saveCurrentSession()
+        Task.detached(priority: .utility) { [weak self] in
+            let fm = FileManager.default
+            var deleted = 0
+            for paths in targets {
+                for path in paths {
+                    if (try? fm.removeItem(atPath: path)) != nil { deleted += 1 }
+                }
+            }
+            await MainActor.run { [weak self] in
+                self?.log(.info, self?.l10n.logCancelCleanupDone(count: deleted) ?? "")
+            }
+        }
+    }
+
+    /// Called when the user chooses to keep the partial copies and resume
+    /// the copy next time.
+    func keepPartialCopies() {
+        showCancelCleanupDialog = false
+        cancelCleanupTargets = []
+    }
+
+    /// Number of individual destination-side files that would be removed
+    /// by `deletePartialCopies()`. Exposed so the dialog can show the count.
+    var cancelCleanupFileCount: Int {
+        cancelCleanupTargets.reduce(0) { $0 + $1.count }
+    }
+
+    private func acquireSleepAssertion() {
+        guard sleepAssertionID == 0 else { return }
+        IOPMAssertionCreateWithName(
+            kIOPMAssertionTypePreventUserIdleSystemSleep as CFString,
+            IOPMAssertionLevel(kIOPMAssertionLevelOn),
+            "MisiCopy — transfert en cours" as CFString,
+            &sleepAssertionID)
+    }
+
+    private func releaseSleepAssertion() {
+        guard sleepAssertionID != 0 else { return }
+        IOPMAssertionRelease(sleepAssertionID)
+        sleepAssertionID = 0
+    }
+
     func togglePause() {
         guard isRunning else { return }
         isPaused.toggle()
@@ -1256,6 +1325,10 @@ final class CopyEngine {
         // copy) but never creates the skeleton on disk.
         allocateReels()
 
+        // Track whether this run resumes from a previous cancel so we
+        // never offer to delete files that belong to an earlier offload.
+        runWasResume = !pendingResumeCompleted.isEmpty
+
         // Resuming an interrupted copy: restore the interrupted run's
         // layout stamps so the remaining files land in the SAME folders
         // (same DIT date, same organize-by-date folder, same REEL_NNN)
@@ -1273,6 +1346,7 @@ final class CopyEngine {
 
         if ditActive && runMode != .verifyOnly { createDITSkeleton() }
 
+        acquireSleepAssertion()
         Task { await run() }
     }
 
@@ -1525,6 +1599,12 @@ final class CopyEngine {
                                        reels: reels)
                 saveCurrentSession()
                 log(.info, l10n.logResumeSaved(count: completedThisRun.count))
+                // Offer to wipe the partial copies — only on fresh runs
+                // (not resumes) so we never touch a previously secured offload.
+                if !runWasResume && !runSimulation {
+                    cancelCleanupTargets = Array(completedTargets.values)
+                    showCancelCleanupDialog = true
+                }
             }
         } else if stats.failed == 0 {
             log(.success, l10n.logDone(verified: stats.verified, found: stats.found))
@@ -1640,6 +1720,7 @@ final class CopyEngine {
             // "Interruption enregistrée" / disabled visual state between
             // an interrupted run and the next manual start.
             cancelRequested = false
+            releaseSleepAssertion()
         }
     }
 
@@ -2541,9 +2622,12 @@ final class CopyEngine {
     private func saveProjectManifest(_ manifest: ProjectManifest, in destination: Destination) {
         let url = projectManifestURL(in: destination)
         let parent = url.deletingLastPathComponent()
-        try? FileManager.default.createDirectory(at: parent, withIntermediateDirectories: true)
-        if let data = try? JSONEncoder().encode(manifest) {
-            try? data.write(to: url, options: [.atomic])
+        do {
+            try FileManager.default.createDirectory(at: parent, withIntermediateDirectories: true)
+            let data = try JSONEncoder().encode(manifest)
+            try data.write(to: url, options: [.atomic])
+        } catch {
+            log(.error, "REEL manifest: could not save to \(url.path) — \(error.localizedDescription)")
         }
     }
 
@@ -2664,8 +2748,12 @@ final class CopyEngine {
         for destination in destinations {
             let url = projectManifestURL(in: destination)
             if fm.fileExists(atPath: url.path) {
-                try? fm.removeItem(at: url)
-                deletedCount += 1
+                do {
+                    try fm.removeItem(at: url)
+                    deletedCount += 1
+                } catch {
+                    log(.error, "REEL reset: could not delete manifest at \(url.path) — \(error.localizedDescription)")
+                }
             }
         }
         ditReelSnapshot = [:]
@@ -3285,6 +3373,10 @@ final class CopyEngine {
     }
 
     private func sendCompletionNotification(success: Bool) {
+        // Play a system sound directly in the app — instant feedback even
+        // when the window is in the background, no notification permission needed.
+        NSSound(named: success ? NSSound.Name("Glass") : NSSound.Name("Funk"))?.play()
+
         guard notifyOnFinish else { return }
         let content = UNMutableNotificationContent()
         content.title = "MisiCopy"

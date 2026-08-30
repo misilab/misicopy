@@ -26,6 +26,7 @@ struct DITStructureView: View {
                             .font(Theme.Typography.cardSubtitle())
                             .foregroundStyle(.secondary)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 .toggleStyle(.switch)
 
@@ -48,6 +49,7 @@ struct DITStructureView: View {
                                 .font(Theme.Typography.cardSubtitle())
                                 .foregroundStyle(.secondary)
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .toggleStyle(.switch)
                     if engine.reelSubfolderEnabled {
@@ -71,6 +73,7 @@ struct DITStructureView: View {
                                 .font(Theme.Typography.cardSubtitle())
                                 .foregroundStyle(.secondary)
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .toggleStyle(.switch)
                     Text(previewLine)

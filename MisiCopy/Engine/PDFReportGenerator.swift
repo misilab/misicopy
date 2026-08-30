@@ -686,6 +686,10 @@ private struct TableColumns {
             fileLabel = "File"; sizeLabel = "Size"; hashLabel = "Checksum"; statusLabel = "Status"
         case .es:
             fileLabel = "Archivo"; sizeLabel = "Tamaño"; hashLabel = "Checksum"; statusLabel = "Estado"
+        case .de:
+            fileLabel = "Datei"; sizeLabel = "Größe"; hashLabel = "Checksum"; statusLabel = "Status"
+        case .it:
+            fileLabel = "File"; sizeLabel = "Dimensione"; hashLabel = "Checksum"; statusLabel = "Stato"
         }
         return [
             (file, fileLabel),
