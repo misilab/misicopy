@@ -8,6 +8,27 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.15</title>
+            <pubDate>Tue, 01 Sep 2026 15:58:45 +0000</pubDate>
+            <sparkle:version>46</sparkle:version>
+            <sparkle:shortVersionString>1.15</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Nouveautés 1.15 — Format de date configurable pour les dossiers DIT</h3>
+                <ul>
+                    <li><b>Format de date des dossiers configurable</b> : Réglages → Structure DIT → nouveau sélecteur. Choisissez entre AAMMJJ (260901, tri chronologique correct — nouveau défaut) ou JJMMAA (010926, format européen historique).</li>
+                    <li>Les dossiers <code>01_RUSHES/260901/</code>, <code>03_PROXY/260901/</code> et les noms de rapport suivent automatiquement le format choisi.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.15/MisiCopy-1.15.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="cqyClkn0U5estRgWkaxXuZZbzJsChDoBmQgm8HXqenKeq76lXbGcFIL5Fd7DD5sd6+Vtt7GSZmZ5XUN7c4ilCQ==" length="4021420"/>
+        </item>
+
+
+
+        <item>
             <title>Version 1.14</title>
             <pubDate>Sun, 30 Aug 2026 20:20:47 +0000</pubDate>
             <sparkle:version>45</sparkle:version>
@@ -782,4 +803,5 @@
 
     </channel>
 </rss>
+
 
