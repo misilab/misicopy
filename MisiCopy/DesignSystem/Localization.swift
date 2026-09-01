@@ -2302,6 +2302,51 @@ struct Localization {
         case .it: return "Ripristina predefiniti"
         }
     }
+    var settingsDITDateFormatHeader: String {
+        switch language {
+        case .fr: return "Format de date des dossiers"
+        case .en: return "Folder date format"
+        case .es: return "Formato de fecha de carpetas"
+        case .de: return "Datumsformat der Ordner"
+        case .it: return "Formato data delle cartelle"
+        }
+    }
+    var settingsDITDateFormatLabel: String {
+        switch language {
+        case .fr: return "Format"
+        case .en: return "Format"
+        case .es: return "Formato"
+        case .de: return "Format"
+        case .it: return "Formato"
+        }
+    }
+    var settingsDITDateFormatAmerican: String {
+        switch language {
+        case .fr: return "AAMMJJ — 260901 (tri chronologique)"
+        case .en: return "YYMMDD — 260901 (sorts correctly)"
+        case .es: return "AAMMDD — 260901 (orden cronológico)"
+        case .de: return "JJMMTT — 260901 (chronologisch sortierbar)"
+        case .it: return "AAMMGG — 260901 (ordine cronologico)"
+        }
+    }
+    var settingsDITDateFormatFrench: String {
+        switch language {
+        case .fr: return "JJMMAA — 010926 (format européen)"
+        case .en: return "DDMMYY — 010926 (European format)"
+        case .es: return "DDMMAA — 010926 (formato europeo)"
+        case .de: return "TTMMJJ — 010926 (europäisches Format)"
+        case .it: return "GGMMAA — 010926 (formato europeo)"
+        }
+    }
+    func settingsDITDateFormatFooter(example: String) -> String {
+        switch language {
+        case .fr: return "Exemple pour aujourd'hui : \(example)"
+        case .en: return "Today's example: \(example)"
+        case .es: return "Ejemplo de hoy: \(example)"
+        case .de: return "Heutiges Beispiel: \(example)"
+        case .it: return "Esempio di oggi: \(example)"
+        }
+    }
     var menuStart: String {
         switch language {
         case .fr: return "Lancer"

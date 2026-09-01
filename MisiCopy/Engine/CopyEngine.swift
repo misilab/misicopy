@@ -157,8 +157,12 @@ final class CopyEngine {
     /// are automatically routed to `03_PROXY/` instead of `01_RUSHES/`.
     /// Set to `false` if you prefer to copy all footage to `01_RUSHES/`.
     var ditCopyProxyEnabled: Bool = true
+    /// Date format used for DIT subfolders and report filenames.
+    /// "yyMMdd" = AAMMJJ (260901, sorts correctly — default).
+    /// "ddMMyy" = JJMMAA (010926, European legacy).
+    var ditDateFormat: String = "yyMMdd"
     /// Prefix of the auto-generated DIT report filename. Final form is
-    /// `<prefix>_<JJMMAA>.pdf`.
+    /// `<prefix>_<date>.pdf`.
     var ditReportPrefix: String = "rapport_DIT"
     /// Extra user-defined empty folders to create at the project root in
     /// addition to the standard five (e.g. "05_EDIT", "06_DELIVERABLES").
@@ -440,6 +444,8 @@ final class CopyEngine {
         var reelSubfolder: Bool?
         // Added in 1.13.0 — auto-route proxy files to 03_PROXY/.
         var copyProxy: Bool?
+        // Added in 1.14.0 — date format for DIT subfolders ("yyMMdd" or "ddMMyy").
+        var dateFormat: String?
     }
 
     private func loadDITSettings() {
@@ -455,6 +461,7 @@ final class CopyEngine {
         if let name = s.projectName { projectName = name }
         if let reel = s.reelSubfolder { reelSubfolderEnabled = reel }
         if let cp = s.copyProxy { ditCopyProxyEnabled = cp }
+        if let df = s.dateFormat { ditDateFormat = df }
     }
 
     /// Persists the DIT folder customisations + the toggle + the project
@@ -472,7 +479,8 @@ final class CopyEngine {
             enabled: ditMode,
             projectName: projectName,
             reelSubfolder: reelSubfolderEnabled,
-            copyProxy: ditCopyProxyEnabled
+            copyProxy: ditCopyProxyEnabled,
+            dateFormat: ditDateFormat
         ))
     }
 
@@ -1300,7 +1308,7 @@ final class CopyEngine {
         // AND two sessions on the same day don't overwrite each other's
         // report / MHL files.
         let stamp = DateFormatter()
-        stamp.dateFormat = "ddMMyy"
+        stamp.dateFormat = ditDateFormat
         ditDateStamp = stamp.string(from: startDate ?? Date())
         let time = DateFormatter()
         time.dateFormat = "HHmmss"

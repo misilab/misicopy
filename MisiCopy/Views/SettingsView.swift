@@ -269,6 +269,19 @@ struct SettingsView: View {
             }
 
             Section {
+                Picker(l.settingsDITDateFormatLabel, selection: $engine.ditDateFormat) {
+                    Text(l.settingsDITDateFormatAmerican).tag("yyMMdd")
+                    Text(l.settingsDITDateFormatFrench).tag("ddMMyy")
+                }
+                .pickerStyle(.menu)
+                Text(l.settingsDITDateFormatFooter(example: dateFormatPreview(engine.ditDateFormat)))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } header: {
+                Label(l.settingsDITDateFormatHeader, systemImage: "calendar")
+            }
+
+            Section {
                 Button(l.settingsDITReset) {
                     engine.ditFolderInfos = CopyEngine.defaultDITFolderInfos
                     engine.ditFolderRushes = CopyEngine.defaultDITFolderRushes
@@ -277,6 +290,7 @@ struct SettingsView: View {
                     engine.ditFolderLUT = CopyEngine.defaultDITFolderLUT
                     engine.ditReportPrefix = CopyEngine.defaultDITReportPrefix
                     engine.ditExtraFolders = []
+                    engine.ditDateFormat = "yyMMdd"
                     engine.saveDITSettings()
                 }
             }
@@ -289,6 +303,7 @@ struct SettingsView: View {
         .onChange(of: engine.ditFolderLUT) { _, _ in engine.saveDITSettings() }
         .onChange(of: engine.ditReportPrefix) { _, _ in engine.saveDITSettings() }
         .onChange(of: engine.ditExtraFolders) { _, _ in engine.saveDITSettings() }
+        .onChange(of: engine.ditDateFormat) { _, _ in engine.saveDITSettings() }
     }
 
     private var prefixPreview: String {
@@ -297,7 +312,11 @@ struct SettingsView: View {
     }
 
     private var datePreview: String {
-        let fmt = DateFormatter(); fmt.dateFormat = "ddMMyy"
+        dateFormatPreview(appModel.engine.ditDateFormat)
+    }
+
+    private func dateFormatPreview(_ format: String) -> String {
+        let fmt = DateFormatter(); fmt.dateFormat = format
         return fmt.string(from: Date())
     }
 
