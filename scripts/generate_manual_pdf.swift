@@ -87,7 +87,7 @@ func parseBlocks(_ md: String) -> [LanguageBlock] {
     }
 
     for line in lines {
-        if line.hasPrefix("# 🇫🇷") || line.hasPrefix("# 🇬🇧") || line.hasPrefix("# 🇪🇸") {
+        if line.hasPrefix("# 🇫🇷") || line.hasPrefix("# 🇬🇧") || line.hasPrefix("# 🇪🇸") || line.hasPrefix("# 🇩🇪") || line.hasPrefix("# 🇮🇹") {
             flushBlock()
             let parts = line.dropFirst(2).split(separator: " ", maxSplits: 1)
             if let first = parts.first { currentFlag = String(first) }

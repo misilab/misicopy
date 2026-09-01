@@ -1,6 +1,6 @@
 # MisiCopy
 
-Manuel utilisateur · User manual · Manual de usuario · Version 1.12.0
+Manuel utilisateur · User manual · Manual de usuario · Benutzerhandbuch · Manuale utente · Version 1.15
 
 ---
 
@@ -177,17 +177,17 @@ Pour les workflows pro (DIT plateau, archive long-métrage), MisiCopy peut crée
 ```
 FILM_X_2026/
 ├── 00_INFOS/                    ← rapport DIT auto-généré ici
-│   └── rapport_DIT_070626.pdf
+│   └── rapport_DIT_260907.pdf
 ├── 01_RUSHES/                   ← les fichiers source vont ici
-│   └── 070626/                  ← date du jour (JJMMAA)
+│   └── 260907/                  ← date du jour (AAMMJJ par défaut)
 │       ├── A_CAM/
 │       │   └── A001_xxxx/       ← nom de la carte
 │       ├── B_CAM/
 │       └── SON/
 ├── 02_MHL/                      ← MHL auto-exporté ici
-│   └── 070626_A001_xxxx.mhl
+│   └── 260907_A001_xxxx.mhl
 ├── 03_PROXY/
-│   └── 070626/
+│   └── 260907/
 └── 04_LUT/
 ```
 
@@ -197,7 +197,7 @@ FILM_X_2026/
 
 ```
 FILM_X_2026/
-└── 01_RUSHES/070626/
+└── 01_RUSHES/260907/
     ├── A_CAM/
     │   ├── REEL_001/             ← 1er déchargement A_CAM
     │   └── REEL_002/             ← 2ème déchargement A_CAM
@@ -214,6 +214,7 @@ Le compteur est persisté dans un fichier caché `.misicopy-project.json` à la 
 **Personnaliser l'arborescence** : ouvre **Réglages → Structure DIT**. Tu peux :
 - Renommer chaque dossier standard (ex: `01_RUSHES` → `RUSHES`, `04_LUT` → `LUTS_SHOW`)
 - Changer le préfixe du rapport (ex: `rapport_DIT` → `DIT_LOG`)
+- **Choisir le format de date** : `AAMMJJ` (260907, tri chronologique correct — défaut) ou `JJMMAA` (070926, format européen historique)
 - **Ajouter des dossiers supplémentaires** créés vides à la racine du projet (ex: `05_EDIT`, `06_DELIVERABLES`, `MASTER_AUDIO`, `BTS_PHOTOS`)
 - Bouton **Réinitialiser** pour revenir aux valeurs par défaut
 
@@ -337,6 +338,24 @@ Si une copie se termine avec des fichiers en erreur (checksum non concordant, le
 
 Pratique sur plateau quand une carte SD a un secteur instable : tu identifies le problème, tu reconnectes la carte proprement, puis tu cliques **Recopier** pour finir le job sans reprendre 90 minutes de copie.
 
+## Dialog post-annulation (nouveau · 1.14)
+
+Quand vous **annulez** une copie en cours qui a déjà écrit des fichiers, MisiCopy affiche une boîte de dialogue avec deux options :
+
+- **Supprimer (N fichier(s))** — supprime tous les fichiers partiellement copiés sur les destinations. Utile pour repartir de zéro proprement. L'état de reprise est effacé.
+- **Conserver et reprendre** — garde les fichiers déjà copiés. La session sera reprise au prochain lancement depuis là où elle s'est arrêtée.
+
+Cette boîte ne s'affiche que si la copie n'était pas déjà une reprise d'une session précédente (pour ne pas supprimer des fichiers d'un run antérieur).
+
+## Son de fin de copie (nouveau · 1.14)
+
+MisiCopy joue un son système à la fin de chaque copie, indépendamment des notifications macOS :
+
+- **Glass** (son cristallin) — copie terminée avec succès
+- **Funk** (son d'alerte) — copie terminée avec erreurs
+
+Le son joue même si MisiCopy est en arrière-plan, sans aucune permission requise.
+
 ## Les rapports automatiques
 
 À la fin de chaque copie, une **boîte de dialogue** récapitule le résultat (fichiers vérifiés, volume, durée — désactivable dans Réglages → Général), et MisiCopy génère **automatiquement** un rapport **PDF** à la racine de chaque destination. Ce PDF contient :
@@ -451,7 +470,7 @@ MisiCopy Remote est une app iPhone gratuite qui vous permet de **suivre vos copi
 
 ## Les langues
 
-Menu **Langue** : Français, English, Español. Le changement est instantané — toute l'interface (y compris la barre de menus système macOS) bascule en temps réel.
+Menu **Langue** : Français, English, Español, Deutsch, Italiano. Le changement est instantané — toute l'interface (y compris la barre de menus système macOS) bascule en temps réel.
 
 ## Les raccourcis clavier
 
@@ -668,17 +687,17 @@ For pro workflows (on-set DIT, long-feature archival), MisiCopy can **automatica
 ```
 FILM_X_2026/
 ├── 00_INFOS/                    ← DIT report auto-written here
-│   └── rapport_DIT_070626.pdf
+│   └── rapport_DIT_260907.pdf
 ├── 01_RUSHES/                   ← source files land here
-│   └── 070626/                  ← today's date (DDMMYY)
+│   └── 260907/                  ← today's date (YYMMDD by default)
 │       ├── A_CAM/
 │       │   └── A001_xxxx/       ← card name
 │       ├── B_CAM/
 │       └── SON/
 ├── 02_MHL/                      ← MHL auto-exported here
-│   └── 070626_A001_xxxx.mhl
+│   └── 260907_A001_xxxx.mhl
 ├── 03_PROXY/
-│   └── 070626/
+│   └── 260907/
 └── 04_LUT/
 ```
 
@@ -688,7 +707,7 @@ FILM_X_2026/
 
 ```
 FILM_X_2026/
-└── 01_RUSHES/070626/
+└── 01_RUSHES/260907/
     ├── A_CAM/
     │   ├── REEL_001/             ← 1st A_CAM dump
     │   └── REEL_002/             ← 2nd A_CAM dump
@@ -703,6 +722,7 @@ The counter is persisted in a hidden `.misicopy-project.json` file at the projec
 **Customise the structure**: open **Settings → DIT structure**. You can:
 - Rename each standard folder (e.g. `01_RUSHES` → `RUSHES`, `04_LUT` → `SHOW_LUTS`)
 - Change the report prefix (e.g. `rapport_DIT` → `DIT_LOG`)
+- **Choose the date format**: `YYMMDD` (260907, sorts correctly alphabetically — default) or `DDMMYY` (070926, European legacy format)
 - **Add extra folders** created empty at the project root (e.g. `05_EDIT`, `06_DELIVERABLES`, `MASTER_AUDIO`, `BTS_PHOTOS`)
 - **Reset to defaults** button to restore standard names
 
@@ -812,6 +832,24 @@ MisiCopy now remembers, **file by file**, everything already copied AND verified
 - Safety net: a file is only skipped if every destination still holds a copy **of the same size** — otherwise it's re-copied. When in doubt, the **Verify only** mode confirms integrity byte by byte.
 
 A copy that runs to completion clears this resume memory: the next Start begins from scratch, as expected.
+
+## Cancel cleanup dialog (new · 1.14)
+
+When you **cancel** a copy that has already written files, MisiCopy shows a dialog with two choices:
+
+- **Delete (N file(s))** — deletes all partially copied files from the destinations. Use this to start over cleanly. Resume state is cleared.
+- **Keep and resume** — keeps the files already copied. The session will resume at next launch from where it left off.
+
+This dialog only appears if the copy was not already a resume of a previous session (to avoid deleting files from a prior run).
+
+## Completion sound (new · 1.14)
+
+MisiCopy plays a system sound at the end of every copy, independently of macOS notifications:
+
+- **Glass** (crystal chime) — copy completed successfully
+- **Funk** (alert tone) — copy completed with errors
+
+The sound plays even if MisiCopy is in the background, with no permission required.
 
 ## Automatic reports
 
@@ -926,6 +964,8 @@ MisiCopy Remote is a free iPhone app that lets you **monitor your copies remotel
 - **iCloud** (fallback): when you're not on the same Wi-Fi, the iPhone reads the state via your private iCloud. Real-time lock-screen tracking keeps working through push notifications, wherever you are.
 
 ## Languages
+
+MisiCopy is fully available in five languages: Français, English, Español, Deutsch, Italiano. Switch instantly via the language selector in the top-right corner.
 
 Menu **Language**: French, English, Spanish. Change is instant — the entire UI (including the macOS system menu bar) switches in real-time.
 
@@ -1139,17 +1179,17 @@ Para flujos profesionales (DIT en rodaje, archivo de largometraje), MisiCopy cre
 ```
 FILM_X_2026/
 ├── 00_INFOS/                    ← informe DIT generado aquí
-│   └── rapport_DIT_070626.pdf
+│   └── rapport_DIT_260907.pdf
 ├── 01_RUSHES/                   ← los rushes van aquí
-│   └── 070626/                  ← fecha del día (DDMMAA)
+│   └── 260907/                  ← fecha del día (AAMMDD por defecto)
 │       ├── A_CAM/
 │       │   └── A001_xxxx/       ← nombre de la tarjeta
 │       ├── B_CAM/
 │       └── SON/
 ├── 02_MHL/                      ← MHL exportado aquí
-│   └── 070626_A001_xxxx.mhl
+│   └── 260907_A001_xxxx.mhl
 ├── 03_PROXY/
-│   └── 070626/
+│   └── 260907/
 └── 04_LUT/
 ```
 
@@ -1159,7 +1199,7 @@ FILM_X_2026/
 
 ```
 FILM_X_2026/
-└── 01_RUSHES/070626/
+└── 01_RUSHES/260907/
     ├── A_CAM/
     │   ├── REEL_001/             ← 1ª descarga A_CAM
     │   └── REEL_002/             ← 2ª descarga A_CAM
@@ -1174,6 +1214,7 @@ El contador se guarda en un archivo oculto `.misicopy-project.json` en la raíz 
 **Personalizar la estructura**: abre **Ajustes → Estructura DIT**. Puedes:
 - Renombrar cada carpeta estándar
 - Cambiar el prefijo del informe
+- **Elegir el formato de fecha**: `AAMMDD` (260907, orden cronológico correcto — por defecto) o `DDMMAA` (070926, formato europeo)
 - **Añadir carpetas adicionales** vacías a la raíz del proyecto (ej: `05_EDIT`, `06_DELIVERABLES`)
 - Botón **Restablecer valores predeterminados**
 
@@ -1263,6 +1304,20 @@ MisiCopy memoriza ahora, **archivo por archivo**, todo lo ya copiado Y verificad
 
 Una copia completada borra esta memoria de reanudación: el próximo Iniciar empieza de cero, como cabe esperar.
 
+## Diálogo tras cancelación (nuevo · 1.14)
+
+Cuando **cancelas** una copia que ya ha escrito archivos, MisiCopy muestra un diálogo con dos opciones:
+
+- **Eliminar (N archivo(s))** — elimina todos los archivos parcialmente copiados en los destinos. Útil para empezar de cero. El estado de reanudación se borra.
+- **Conservar y reanudar** — mantiene los archivos ya copiados. La sesión se reanudará en el próximo lanzamiento desde donde se detuvo.
+
+## Sonido de fin de copia (nuevo · 1.14)
+
+MisiCopy reproduce un sonido del sistema al terminar cada copia, independientemente de las notificaciones de macOS:
+
+- **Glass** — copia completada con éxito
+- **Funk** — copia completada con errores
+
 ## Los informes automáticos
 
 Al final de cada copia, un **cuadro de diálogo** resume el resultado (archivos verificados, volumen, duración — desactivable en Ajustes → General), y MisiCopy genera **automáticamente** un **informe PDF** en la raíz de cada destino, con cabecera de marca, listing de orígenes/destinos, estadísticas, miniaturas de clips, y tabla completa de archivos con checksums y estado.
@@ -1351,7 +1406,7 @@ MisiCopy Remote es una app de iPhone gratuita para **seguir tus copias a distanc
 
 ## Los idiomas
 
-Menú **Idioma**: Français, English, Español. Cambio instantáneo en toda la interfaz.
+Menú **Idioma**: Français, English, Español, Deutsch, Italiano. Cambio instantáneo en toda la interfaz.
 
 ## Atajos de teclado
 
@@ -1395,4 +1450,222 @@ Sitio: **www.misicopy.com**
 
 ---
 
-*MisiCopy © 2026 Matthieu Misiraca. Bons tournages · Happy shoots · Buenos rodajes.*
+*MisiCopy © 2026 Matthieu Misiraca. Bons tournages · Happy shoots · Buenos rodajes · Gute Drehs · Buone riprese.*
+
+---
+
+# 🇩🇪 Deutsch
+
+## Übersicht
+
+MisiCopy ist eine macOS-Anwendung, die Ihre Kamerakarten (SD, CFexpress, microSD) oder Laufwerke (SSD, HDD) auf ein oder mehrere Ziele kopiert und dabei jedes Bit auf Integrität prüft – eine **Prüfsummen-Kopie** (Checksum-Copy), der Industriestandard seit 15 Jahren.
+
+**Warum?** Wenn Sie eine Datei mit dem Finder kopieren, überprüft macOS nicht, ob die geschriebenen Bytes den gelesenen entsprechen. Auf kritischen Daten wie Drehmaterial kann eine fehlerhafte SD-Karte oder ein instabiles Kabel stille Korruption verursachen. MisiCopy berechnet eine digitale Signatur (Prüfsumme) vor und nach jeder Kopie: Wenn sie nicht übereinstimmen, wissen Sie es sofort.
+
+## Installation
+
+Laden Sie **MisiCopy-1.15.pkg** von der GitHub-Release-Seite herunter, doppelklicken Sie darauf und folgen Sie dem Installationsassistenten. Die App ist von Apple signiert und notarisiert.
+
+## Lizenz aktivieren
+
+Beim ersten Start läuft MisiCopy im **Testmodus**: **7 Tage** oder **25 vollständige Transfers** (was zuerst erreicht wird). Alle Funktionen sind ohne Einschränkungen verfügbar.
+
+Lizenz aktivieren: Menü **MisiCopy → Einstellungen** (⌘ ,) → Reiter **Lizenz** → Lizenzschlüssel einfügen → **Aktivieren**.
+
+## Die Benutzeroberfläche
+
+Das Fenster ist in zwei Spalten aufgeteilt:
+
+**Links:** Quellen (Karten/Ordner per Drag & Drop oder Schaltfläche), Ziele (beliebig viele), Kopiermodus-Auswahl.
+
+**Rechts:** DIT-Struktur, Statistiken (Dateien gefunden/kopiert/verifiziert/Fehler), Aktionsschaltfläche, Warteschlange, Aktivitätsprotokoll.
+
+## Die Kopiermodi
+
+- **Kopieren + Verifizieren** *(Standard)*: kopiert alle Dateien und verifiziert jede Prüfsumme — kein Bit geht verloren.
+- **Nur kopieren**: schnell, ohne Verifikation. Nicht empfohlen für kritisches Material.
+- **Nur verifizieren**: prüft, ob eine frühere Kopie korrekt ist, ohne etwas zu schreiben.
+- **Simulation**: führt die gesamte Pipeline durch, ohne etwas auf die Ziele zu schreiben.
+
+## Die DIT-Struktur (automatische Ordnerstruktur)
+
+Für professionelle Workflows (On-Set-DIT, Langfilm-Archivierung) erstellt MisiCopy **automatisch** die branchenübliche Ordnerstruktur auf jedem Ziel.
+
+**Aktivierung**: Abschnitt **DIT-Struktur** oben in der rechten Spalte → Schalter **DIT-Ordnerstruktur aktivieren** + Feld **Projektname**.
+
+```
+FILM_X_2026/
+├── 00_INFOS/                    ← DIT-Bericht hier
+│   └── rapport_DIT_260907.pdf
+├── 01_RUSHES/                   ← Quelldateien hier
+│   └── 260907/                  ← Datum (JJMMTT Standard)
+│       ├── A_CAM/
+│       ├── B_CAM/
+│       └── SON/
+├── 02_MHL/
+├── 03_PROXY/
+└── 04_LUT/
+```
+
+**Datumsformat** (Einstellungen → DIT-Struktur): `JJMMTT` (260907, korrekte chronologische Sortierung — Standard) oder `TTMMJJ` (070926, europäisches Format).
+
+**Kameraerkennung**: MisiCopy liest den Namen des ersten Clips. Wenn er mit `A001_`, `B001_` usw. beginnt (ARRI/RED/Sony-Konvention), wird die Karte automatisch dem richtigen `*_CAM/`-Ordner zugeordnet.
+
+**REEL-Unterordner** (ab 1.6.0): optionaler Schalter, der den Kartennamen durch einen `REEL_001`, `REEL_002`-Zähler pro Kamera ersetzt.
+
+**Anpassen**: Einstellungen → DIT-Struktur — alle Ordnernamen sind konfigurierbar, Zusatzordner können hinzugefügt werden.
+
+## Kopieroptionen
+
+- **Simulation**: vollständige Pipeline ohne Schreiben
+- **Proxy-Routing**: Proxy-Dateien (Sony Sub/, Blackmagic Proxy/, Canon PROXY/ etc.) werden automatisch nach `03_PROXY/` geleitet
+- **Nach Datum organisieren**: erstellt automatisch einen `2026-09-07/`-Unterordner in jedem Ziel
+- **Auto-Eject**: wirft die Quellkarte nach vollständiger Verifikation aller Ziele aus
+- **Dateien umbenennen**: Token-basiert — `{source}_{counter:04}.{ext}`, `{camera}_{date}`, usw.
+- **Erweiterungsfilter**: Whitelist (nur diese Formate kopieren) und Blacklist (diese Formate überspringen)
+
+## Automatischer Abschluss-Dialog nach Abbruch (neu · 1.14)
+
+Wenn Sie eine Kopie abbrechen, die bereits Dateien geschrieben hat, bietet MisiCopy zwei Optionen:
+
+- **Löschen (N Datei(en))**: löscht alle teilweise kopierten Dateien. Nützlich für einen sauberen Neustart.
+- **Behalten und fortsetzen**: behält die kopierten Dateien. Die Sitzung wird beim nächsten Start fortgesetzt.
+
+## Abschlusston (neu · 1.14)
+
+MisiCopy spielt einen Systemton am Ende jeder Kopie, unabhängig von macOS-Benachrichtigungen:
+- **Glass** (Kristallklang) — Kopie erfolgreich abgeschlossen
+- **Funk** (Warnton) — Kopie mit Fehlern abgeschlossen
+
+## Berichte
+
+Am Ende jeder Kopie generiert MisiCopy automatisch einen **PDF-Bericht** im Stammverzeichnis jedes Ziels, mit Quellen-/Ziel-Listing, Statistiken, Clip-Miniaturen und einer vollständigen Dateitabelle mit Prüfsummen.
+
+Weitere Formate: **MHL v1** (⌘ E), **ASCMHL v2** (⌘ ⇧ E), **CSV** (⌘ ⇧ S), **HTML** (⌘ ⇧ H).
+
+## Fortsetzung nach Unterbrechung
+
+MisiCopy merkt sich, welche Dateien bereits kopiert und verifiziert wurden. Wenn Sie eine Kopie unterbrechen oder der Mac abstürzt, können Sie beim nächsten Start weitermachen — in denselben Ordnern, ohne etwas neu zu kopieren.
+
+## iPhone-App (MisiCopy Remote)
+
+Verfolgen Sie Ihre Kopien in Echtzeit von Ihrem iPhone aus. Aktivierung: Einstellungen → iPhone → QR-Code scannen.
+
+## Sprachen
+
+MisiCopy ist in 5 Sprachen verfügbar: Français, English, Español, Deutsch, Italiano. Wechsel über den Sprachschalter oben rechts.
+
+## Support
+
+Bei Fragen oder Problemen: **misicopy@misiraca.com**. Antwort innerhalb von 24 Stunden.
+
+Website: **www.misicopy.com**
+
+---
+
+# 🇮🇹 Italiano
+
+## Presentazione
+
+MisiCopy è un'applicazione macOS che copia i vostri rush dalle schede di memoria (SD, CFexpress, microSD) o dai dischi (SSD, HDD) verso una o più destinazioni, verificando che nessun bit venga alterato durante il trasferimento — la **copia con checksum**, lo standard del settore da 15 anni.
+
+**Perché?** Quando si copia un file con il Finder, macOS non verifica che i byte scritti corrispondano a quelli letti. Su dati critici come i rush di ripresa, una scheda SD difettosa o un cavo instabile può corrompere silenziosamente alcuni byte. MisiCopy calcola una firma digitale (checksum) prima e dopo ogni copia: se non corrispondono, lo sapete subito.
+
+## Installazione
+
+Scaricate **MisiCopy-1.15.pkg** dalla pagina delle release GitHub, fate doppio clic e seguite la procedura guidata. L'app è firmata e notarizzata da Apple.
+
+## Attivare la licenza
+
+All'avvio, MisiCopy parte in **modalità prova**: **7 giorni** o **25 trasferimenti completi** (il primo raggiunto interrompe il periodo di prova). Tutte le funzioni sono disponibili senza restrizioni.
+
+Per attivare: Menu **MisiCopy → Impostazioni** (⌘ ,) → scheda **Licenza** → incollare il codice → **Attiva**.
+
+## L'interfaccia principale
+
+La finestra è divisa in due colonne:
+
+**Sinistra:** sorgenti (schede/cartelle per trascinamento o pulsante), destinazioni (quante se ne vuole), selezione della modalità di copia.
+
+**Destra:** struttura DIT, statistiche (file trovati/copiati/verificati/errori), pulsante azione, coda, registro attività.
+
+## Le modalità di copia
+
+- **Copia + Verifica** *(predefinita)*: copia tutti i file e verifica ogni checksum.
+- **Solo copia**: veloce, senza verifica. Sconsigliata per materiale critico.
+- **Solo verifica**: controlla se una copia precedente è corretta, senza scrivere nulla.
+- **Simulazione**: esegue l'intera pipeline senza scrivere nulla sulle destinazioni.
+
+## La struttura DIT (albero automatico)
+
+Per i flussi di lavoro professionali (DIT in set, archiviazione lungometraggio), MisiCopy crea **automaticamente** la struttura di cartelle standard del settore su ogni destinazione.
+
+**Attivazione**: sezione **Struttura DIT** in cima alla colonna destra → interruttore **Attiva struttura DIT** + campo **Nome progetto**.
+
+```
+FILM_X_2026/
+├── 00_INFOS/                    ← report DIT qui
+│   └── rapport_DIT_260907.pdf
+├── 01_RUSHES/                   ← file sorgente qui
+│   └── 260907/                  ← data del giorno (AAMMGG predefinito)
+│       ├── A_CAM/
+│       ├── B_CAM/
+│       └── SON/
+├── 02_MHL/
+├── 03_PROXY/
+└── 04_LUT/
+```
+
+**Formato data** (Impostazioni → Struttura DIT): `AAMMGG` (260907, ordine cronologico corretto — predefinito) o `GGMMAA` (070926, formato europeo).
+
+**Rilevamento automatico della fotocamera**: MisiCopy legge il nome del primo clip. Se inizia con `A001_`, `B001_` ecc. (convenzione ARRI/RED/Sony), la scheda viene instradata alla cartella `*_CAM/` corretta.
+
+**Sottocartella REEL** (da 1.6.0): interruttore opzionale che sostituisce il nome della scheda con un contatore `REEL_001`, `REEL_002`… numerato per fotocamera.
+
+**Personalizzazione**: Impostazioni → Struttura DIT — tutti i nomi delle cartelle sono configurabili, si possono aggiungere cartelle extra.
+
+## Opzioni di copia
+
+- **Simulazione**: pipeline completa senza scrittura
+- **Routing proxy**: i file proxy (Sony Sub/, Blackmagic Proxy/, Canon PROXY/ ecc.) vengono instradati automaticamente a `03_PROXY/`
+- **Organizza per data**: crea automaticamente una sottocartella `2026-09-07/` in ogni destinazione
+- **Auto-espulsione**: espelle la scheda sorgente dopo la verifica completa di tutte le destinazioni
+- **Rinomina file**: basata su token — `{source}_{counter:04}.{ext}`, `{camera}_{date}`, ecc.
+- **Filtri estensioni**: whitelist (copiare solo questi formati) e blacklist (saltare questi formati)
+
+## Dialog post-annullamento (nuovo · 1.14)
+
+Quando si **annulla** una copia che ha già scritto file, MisiCopy mostra un dialog con due opzioni:
+
+- **Elimina (N file)**: elimina tutti i file parzialmente copiati. Utile per ripartire da zero.
+- **Mantieni e riprendi**: mantiene i file già copiati. La sessione riprenderà al prossimo avvio.
+
+## Suono di fine copia (nuovo · 1.14)
+
+MisiCopy riproduce un suono di sistema al termine di ogni copia, indipendentemente dalle notifiche macOS:
+- **Glass** (suono cristallino) — copia completata con successo
+- **Funk** (suono di avviso) — copia completata con errori
+
+## Report automatici
+
+Al termine di ogni copia, MisiCopy genera automaticamente un **report PDF** nella radice di ogni destinazione, con intestazione, elenco sorgenti/destinazioni, statistiche, miniature dei clip e tabella completa dei file con checksum.
+
+Altri formati: **MHL v1** (⌘ E), **ASCMHL v2** (⌘ ⇧ E), **CSV** (⌘ ⇧ S), **HTML** (⌘ ⇧ H).
+
+## Ripresa dopo interruzione
+
+MisiCopy ricorda quali file sono già stati copiati e verificati. Se interrompete una copia o il Mac si spegne, potete riprendere al prossimo avvio — nelle stesse cartelle, senza ricopiare nulla.
+
+## App iPhone (MisiCopy Remote)
+
+Seguite le vostre copie in tempo reale dall'iPhone. Attivazione: Impostazioni → iPhone → scansiona il codice QR.
+
+## Lingue
+
+MisiCopy è disponibile in 5 lingue: Français, English, Español, Deutsch, Italiano. Cambia tramite il selettore di lingua in alto a destra.
+
+## Supporto
+
+Per domande o problemi: **misicopy@misiraca.com**. Rispondo entro 24 ore.
+
+Sito: **www.misicopy.com**
