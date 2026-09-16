@@ -228,7 +228,21 @@ if [ -n "$SIGN_UPDATE" ] && [ -x "$SIGN_UPDATE" ]; then
                        ${SIG_LINE}/>
         </item>
 EOF
-    echo "  ✓ Appcast entry saved to: $APPCAST_SNIPPET"
+    # Insert snippet into both appcast files (root + marketing/).
+    # The root appcast.xml is the one served by raw.githubusercontent.com
+    # and read by Sparkle. marketing/appcast.xml is kept in sync as a backup.
+    for APPCAST_FILE in "$PROJECT_DIR/appcast.xml" "$PROJECT_DIR/marketing/appcast.xml"; do
+        if [ -f "$APPCAST_FILE" ]; then
+            SNIPPET_CONTENT=$(cat "$APPCAST_SNIPPET")
+            # Insert after <language>fr</language>
+            awk -v snippet="$SNIPPET_CONTENT" '
+                /<language>fr<\/language>/ { print; print ""; print snippet; next }
+                { print }
+            ' "$APPCAST_FILE" > "${APPCAST_FILE}.tmp" && mv "${APPCAST_FILE}.tmp" "$APPCAST_FILE"
+            echo "  ✓ Appcast entry inserted into: $APPCAST_FILE"
+        fi
+    done
+    echo "  ✓ Appcast snippet saved to: $APPCAST_SNIPPET"
 else
     echo "⚠ sign_update introuvable — Sparkle step skipped."
     echo "  Build first: xcodebuild -resolvePackageDependencies"
@@ -241,12 +255,10 @@ SIZE=$(du -h "$PKG_PATH" | cut -f1)
 echo ""
 echo "✅ Release ready:"
 echo "   $PKG_PATH ($SIZE)"
-if [ -f "$APPCAST_SNIPPET" ]; then
-    echo "   $APPCAST_SNIPPET (insert into misicopy/appcast.xml between <language>fr</language> and </channel>)"
-fi
 echo ""
 echo "Next:"
-echo "  1. Upload $PKG_PATH as a GitHub Release asset at:"
+echo "  1. Edit the <description> TODO in appcast.xml and marketing/appcast.xml"
+echo "  2. git add appcast.xml marketing/appcast.xml && git commit && git push"
+echo "  3. Upload $PKG_PATH as GitHub Release asset:"
 echo "     https://github.com/misilab/misicopy/releases/new?tag=v${VERSION}"
-echo "  2. Paste the appcast entry into misicopy/appcast.xml on main branch"
-echo "  3. Push — Sparkle will pick it up within 1h on user Macs"
+echo "  4. Sparkle will pick it up within minutes on user Macs"
