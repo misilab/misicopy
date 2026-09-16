@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.16</title>
+            <pubDate>Wed, 16 Sep 2026 12:35:48 +0000</pubDate>
+            <sparkle:version>47</sparkle:version>
+            <sparkle:shortVersionString>1.16</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctif 1.16 — Bannière "Session précédente" fantôme</h3>
+                <ul>
+                    <li><b>Correctif : bannière "Session précédente détectée" qui réapparaissait</b> — sur les copies longues (disque dur vers disque dur), la sauvegarde en arrière-plan pouvait réécrire le fichier de session <i>après</i> sa suppression en fin de copie. Au prochain lancement, l'app relisait ce fichier ressuscité et proposait une fausse reprise. Les opérations disque sont maintenant sérialisées : le clear() attendu est toujours le dernier mot.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.16/MisiCopy-1.16.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="eRbtSdpVVvtmPGk4ZxEeHvY3at4xwPzG6gHmTQ3xQ3scrT5P/kpsANSJt+LJXUxJ+ntT91S//PcMHe20lGLYCw==" length="3771415"/>
+        </item>
+
+        <item>
             <title>Version 1.15</title>
             <pubDate>Tue, 01 Sep 2026 15:58:45 +0000</pubDate>
             <sparkle:version>46</sparkle:version>

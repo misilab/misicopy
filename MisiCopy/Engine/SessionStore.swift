@@ -47,6 +47,11 @@ struct SavedSession: Codable, Hashable {
 final class SessionStore {
     private(set) var saved: SavedSession?
     private let store = JSONFileStore(filename: "last_session.json")
+    /// Serial queue that serializes all disk operations. Guarantees that a
+    /// clear() dispatched after saveInBackground() always wins on disk even
+    /// if the background write was still pending when clear() was called.
+    private let diskQueue = DispatchQueue(label: "com.misicopy.session-store",
+                                          qos: .utility)
 
     init() {
         saved = store.load(as: SavedSession.self)
@@ -54,7 +59,8 @@ final class SessionStore {
 
     func save(_ session: SavedSession) {
         saved = session
-        store.save(session)
+        let store = store
+        diskQueue.async { store.save(session) }
     }
 
     /// Same as `save`, but the JSON encode + disk write happen off the
@@ -64,13 +70,15 @@ final class SessionStore {
     func saveInBackground(_ session: SavedSession) {
         saved = session
         let store = store
-        Task.detached(priority: .utility) {
-            store.save(session)
-        }
+        diskQueue.async { store.save(session) }
     }
 
     func clear() {
         saved = nil
-        store.clear()
+        // Dispatch through the same serial queue so any in-flight save
+        // completes before the file is deleted — preventing a stale write
+        // from racing past the clear and resurrecting the banner.
+        let store = store
+        diskQueue.async { store.clear() }
     }
 }
