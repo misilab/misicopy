@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.16</title>
+            <pubDate>Wed, 16 Sep 2026 12:35:48 +0000</pubDate>
+            <sparkle:version>47</sparkle:version>
+            <sparkle:shortVersionString>1.16</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctif 1.16 — Bannière "Session précédente" fantôme</h3>
+                <ul>
+                    <li><b>Correctif : bannière "Session précédente détectée" qui réapparaissait</b> — sur les copies longues (disque dur vers disque dur), la sauvegarde en arrière-plan pouvait réécrire le fichier de session <i>après</i> sa suppression en fin de copie. Au prochain lancement, l'app relisait ce fichier ressuscité et proposait une fausse reprise. Les opérations disque sont maintenant sérialisées : le clear() attendu est toujours le dernier mot.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.16/MisiCopy-1.16.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="eRbtSdpVVvtmPGk4ZxEeHvY3at4xwPzG6gHmTQ3xQ3scrT5P/kpsANSJt+LJXUxJ+ntT91S//PcMHe20lGLYCw==" length="3771415"/>
+        </item>
+
+        <item>
             <title>Version 1.15</title>
             <pubDate>Tue, 01 Sep 2026 15:58:45 +0000</pubDate>
             <sparkle:version>46</sparkle:version>
@@ -25,8 +43,6 @@
                        type="application/x-newton-compatible-pkg"
                        sparkle:edSignature="cqyClkn0U5estRgWkaxXuZZbzJsChDoBmQgm8HXqenKeq76lXbGcFIL5Fd7DD5sd6+Vtt7GSZmZ5XUN7c4ilCQ==" length="4021420"/>
         </item>
-
-
 
         <item>
             <title>Version 1.14</title>
@@ -49,47 +65,22 @@
                        sparkle:edSignature="xou44qQ6b4TMv8qh0626Y3Tv8VcCPdTC058QLBRGdmAL5iHle2iJU2k4/AwrA3kyjvQ81dsapwf0d0Ha99b8Ag==" length="4012091"/>
         </item>
 
-
-
         <item>
-            <title>Version 1.13</title>
-            <pubDate>Sun, 30 Aug 2026 18:32:38 +0000</pubDate>
-            <sparkle:version>43</sparkle:version>
-            <sparkle:shortVersionString>1.13</sparkle:shortVersionString>
+            <title>Version 1.11.2</title>
+            <pubDate>Tue, 11 Aug 2026 16:42:24 +0000</pubDate>
+            <sparkle:version>41</sparkle:version>
+            <sparkle:shortVersionString>1.11.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:installationType>package</sparkle:installationType>
             <description><![CDATA[
-                <h3>MisiCopy 1.13 — Routage automatique des proxys caméra</h3>
+                <h3>Correctifs 1.11.2</h3>
                 <ul>
-                    <li><b>Mode DIT : proxys routés automatiquement vers 03_PROXY/</b> — MisiCopy détecte les fichiers proxy enregistrés par la caméra et les place directement dans le bon dossier, sans manipulation manuelle après la copie.</li>
-                    <li>Sony FX9 / VENICE / XDCAM → dossier <code>Sub/</code> · Sony FX3 / FX6 → suffixe fichier <code>S01</code>, <code>S02</code>…</li>
-                    <li>Blackmagic BMPCC / URSA → <code>Proxy/</code> · Canon C70 / C300 / C500 / R5C → <code>PROXY/</code> · ARRI ALEXA 35 → <code>PROXIES/</code> · DJI Ronin 4D → <code>PROXY/</code></li>
-                    <li>Nouveau toggle dans la section Structure DIT pour activer ou désactiver ce routage.</li>
+                    <li><b>Carte « déjà déchargée »</b> : la bannière n'apparaît plus si la carte a été reformatée ou contient de nouveaux enregistrements depuis la dernière copie.</li>
                 </ul>
             ]]></description>
-            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.13/MisiCopy-1.13.pkg"
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.11.2/MisiCopy-1.11.2.pkg"
                        type="application/x-newton-compatible-pkg"
-                       sparkle:edSignature="53hQHcNuGqkig4Q8f9rxna4lESSV55Crc3lWQ3022erx6ehgVArhNyWKMV6wHBOILlAo78wKBeZOJ5A+k0a3Cg==" length="3946670"/>
-        </item>
-
-        <item>
-            <title>Version 1.12</title>
-            <pubDate>Tue, 25 Aug 2026 19:31:23 +0000</pubDate>
-            <sparkle:version>42</sparkle:version>
-            <sparkle:shortVersionString>1.12</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:installationType>package</sparkle:installationType>
-            <description><![CDATA[
-                <h3>MisiCopy 1.12 — Modèle payant</h3>
-                <ul>
-                    <li><b>Essai 7 jours / 25 transferts</b> : le compteur d'essai est maintenant actif. Pendant l'essai, toutes les fonctionnalités sont disponibles sans restriction.</li>
-                    <li><b>Achat unique 79,90 €</b> : activez votre clé reçue après achat sur Payhip dans Réglages → Licence.</li>
-                    <li><b>Badge d'état</b> : orange (jours restants), rouge + bouton Acheter (expiré), vert LICENCE (activé).</li>
-                </ul>
-            ]]></description>
-            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.12.0/MisiCopy-1.12.pkg"
-                       type="application/x-newton-compatible-pkg"
-                       sparkle:edSignature="dvIbs5qjFk5QabyWRKMpOj3kvTR2/gUcs+b4VJEuvBITcTTtsOM4BvSJfIcGaCWn+8Ni6Iej8HE//q0YZAbwCQ==" length="3939305"/>
+                       sparkle:edSignature="oL8L4rYk9YfiP8us9csb/n54xbeYnE9Z5sAlCWaWS7uHybJ/a8tadAHJ3QktIRORgPv9a/AtTFpdScR/ugtLDw==" length="3937539"/>
         </item>
 
         <item>
@@ -803,5 +794,3 @@
 
     </channel>
 </rss>
-
-
