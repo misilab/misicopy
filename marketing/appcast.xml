@@ -8,6 +8,24 @@
         <language>fr</language>
 
         <item>
+            <title>Version 1.17</title>
+            <pubDate>Tue, 29 Sep 2026 16:43:22 +0000</pubDate>
+            <sparkle:version>48</sparkle:version>
+            <sparkle:shortVersionString>1.17</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:installationType>package</sparkle:installationType>
+            <description><![CDATA[
+                <h3>Correctif 1.17 — Bannière "Session précédente" persistante</h3>
+                <ul>
+                    <li><b>Correctif : la bannière "Session précédente détectée" réapparaissait en boucle même après avoir cliqué Ignorer</b> — pendant une copie active, le moteur sauvegardait la session toutes les 2 secondes en arrière-plan, réhydratant la bannière chaque fois qu'on la fermait. La bannière n'est désormais visible que lorsqu'aucune copie n'est en cours.</li>
+                </ul>
+            ]]></description>
+            <enclosure url="https://github.com/misilab/misicopy/releases/download/v1.17/MisiCopy-1.17.pkg"
+                       type="application/x-newton-compatible-pkg"
+                       sparkle:edSignature="NRP8W0Svzu6WnMVr/7TipPM/xjL/f5SFTfi6VihiiMTeIUmuIQsHCKMg8IBhYCkKDQdG07XK6P/svvSRqqijAA==" length="3771540"/>
+        </item>
+
+        <item>
             <title>Version 1.16</title>
             <pubDate>Wed, 16 Sep 2026 12:35:48 +0000</pubDate>
             <sparkle:version>47</sparkle:version>

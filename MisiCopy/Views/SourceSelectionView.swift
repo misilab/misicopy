@@ -24,7 +24,7 @@ struct SourceSelectionView: View {
                 .padding(.bottom, 4)
             }
 
-            if let saved = engine.resumableSession {
+            if !engine.isRunning, let saved = engine.resumableSession {
                 ResumeBanner(
                     title: engine.l10n.sessionResumeTitle,
                     subtitle: engine.l10n.sessionResumeSubtitle(savedAt: saved.savedAt),
